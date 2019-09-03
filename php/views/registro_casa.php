@@ -71,10 +71,10 @@
       <div class="">
         <button type="button" id="btnSave" name="button">Guardar</button>
       </div>
+      <footer>
+        <p>Sistema hecho con <3 por <a href="simplekodedesign.com">SKD</a></p>
+      </footer>
     </section>
-    <footer>
-      <p>Hecho con <3> por <a href="simplekodedesign.com">SKD</a></p>
-    </footer>
     <script type="text/javascript" src="../../js/registro_casa.js"></script>
   </body>
 </html>
