@@ -17,7 +17,7 @@
       </form>
 
       <footer>
-        <p>Hecho con <3> por <a href="simplekodedesign.com">SKD</a></p>
+        <p>Hecho con &lt3 por <a href="simplekodedesign.com">SKD</a></p>
       </footer>
     </section>
   </body>

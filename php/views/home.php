@@ -17,7 +17,7 @@
 
     <header>
       <div class="">
-        <a href="home.php">Stadisticas</a>
+        <a href="home.php">Estadísticas</a>
         <a href="registro_casa.php">Registrar casa</a>
       </div>
       <div class="">
