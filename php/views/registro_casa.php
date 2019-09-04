@@ -1,9 +1,9 @@
-<!-- <?php
+<?php
   session_start();
   if(!isset($_SESSION["username"])){
     echo "<script>location='../../index.php'</script>";
   }
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -84,7 +84,7 @@
 
     </div>
       <footer>
-        <p>Sistema hecho con &lt3 por <a href="simplekodedesign.com">SKD</a></p>
+        <p>Sistema hecho por <a href="https:\\simplekodedesign.com">SKD</a></p>
       </footer>
     </section>
     <script type="text/javascript" src="../../js/registro_casa.js"></script>

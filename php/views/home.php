@@ -16,19 +16,19 @@
   <body>
 
     <header>
-      <div class="">
+      <div class="navbar">
         <a href="home.php">Estadísticas</a>
         <a href="registro_casa.php">Registrar casa</a>
       </div>
-      <div class="">
-
+      <div class="exit">
+        <a href="#">Salir</a>
       </div>
     </header>
     <section>
       <h1>En desarrollo: Aquí se mostraran las estadisticas</h1>
     </section>
     <footer>
-      <p>Hecho con <3> por <a href="simplekodedesign.com">SKD</a></p>
+      <p>Sistema hecho por <a href="https:\\simplekodedesign.com">SKD</a></p>
     </footer>
   </body>
 </html>
