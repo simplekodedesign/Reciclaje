@@ -1,0 +1,166 @@
+body{
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  user-select: none;
+}
+
+#main{
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100%;
+}
+
+.menu{
+    width: 20%;
+    background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205));
+    min-height: 100%;
+}
+
+.user{
+  width: 100%;
+  text-align: center;
+}
+
+.user img{
+  width: 40%;
+  margin: 15px 0px 0px 0px;
+  color: white;
+}
+
+.menubtn{
+  display: none;
+}
+
+.username{
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.options{
+  transition: all 500ms;
+  background: transparent;
+  z-index: 0;
+  margin: 9px 0px;
+  width: 100%;
+  position: relative;
+}
+
+.options a{
+  text-decoration: none;
+}
+
+.option{
+  list-style: none;
+  padding: 15px;
+  color: #1f495f;
+  font-size: 1.5em;
+  text-align: left;
+  border-top: 2px solid #1f495f;
+  z-index: 0;
+  transition: all 500ms;
+  background: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.option:hover{
+  background: rgb(35,228,205);
+}
+
+.principal{
+  width: 80%;
+  margin: 0;
+  padding: 0;
+}
+
+
+@media(max-width: 500px){
+  #main{
+    width: 100%;
+    overflow: scroll;
+  }
+
+  #main::-webkit-scrollbar{
+    width: 0px;
+  }
+
+  .menu{
+      width: 100%;
+      background: rgb(31,80,71);
+      height: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 999999;
+  }
+
+  .user{
+    width: 80%;
+    text-align: left;
+    display: flex;
+  }
+
+  .username{
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+    align-self: center;
+    margin-left: 8px;
+    margin: 5px 0px 0px 10px;
+  }
+
+  .user img{
+    width: 32px;
+    margin: 5px 0px 0px 10px;
+    align-self: center;
+  }
+
+  .principal{
+    width: 100%;
+  }
+
+  .menubtn{
+    width: 20%;
+    text-align: right;
+    align-self: center;
+    display: block;
+  }
+
+  .menubtn img{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    align-self: center;
+    margin: 5px 10px 0px 0px;
+    z-index: 2;
+  }
+
+  .options{
+    transform: translateY(-200%);
+    transition: all 500ms;
+    background: #1f495f;
+    z-index: 0;
+    margin: 9px 0px;
+    width: 100%;
+    position: absolute;
+  }
+
+  .option{
+    list-style: none;
+    padding: 15px;
+    color: #fff;
+    font-size: 1.3em;
+    text-align: left;
+    border-top: 2px solid #fff;
+    z-index: 0;
+    transition: all 500ms;
+    background: rgb(31,80,71);
+    text-decoration: none;
+  }
+
+  .option:hover{
+    background: #37bfbf;
+  }
+}

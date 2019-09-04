@@ -9,26 +9,37 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Reciclaje</title>
-    <link rel="stylesheet" href="../../css/master.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale-1, shrink-to-fit=no">
+    <title>Por una Ciudad Verde</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/registro_casa.css">
   </head>
-  <body>
-    <header>
-      <div class="navbar">
-        <a href="home.php">Estadísticas</a>
-        <a href="registro_casa.php">Registrar casa</a>
+  <body id="main">
+    <div class="menu" id="menuCont">
+      <div class="user">
+        <img src="../../img/user2.svg" alt="">
+        <p class="username"><?php echo $_SESSION["username"]?></p>
       </div>
-      <div class="exit">
-        <a href="#">Salir</a>
+      <div class="menubtn">
+        <img src="../../img/menu_icon.svg" id="showMenu" alt="">
       </div>
-    </header>
-    <section>
-    <div class="container">
+      <div class="options" id="menuOptions">
+        <div>
+          <div class="option" id="registrar_casa">
+            Registrar Casa
+          </div>
+        </div>
+        <div>
+          <div class="option" id="estadistica">
+            Estadisticas
+          </div>
+        </div>
+        <div class="option" id="btnSalir">Salir</div>
+      </div>
+    </div>
+    <div class="principal" id="principalCont">
       <div class="titles">
-        <h1>Registro de Casas</h1>
+        <p>Registro de Casas</p>
       </div>
 
       <div class="inputForm">
@@ -44,19 +55,27 @@
 
       <div class="inputForm">
         <label for="direccion">Direccion de casa o Residencia</label>
-        <input type="text" name="name" id="direccion" placeholder="Direccion">
+        <textarea name="name" id="direccion" placeholder="Direccion"></textarea>
       </div>
 
       <div class="inputForm">
         <label for="n_personas">Número de Personas en el grupo familiar</label>
-        <input type="text" id="n_personas" name="" value="" placeholder="Ejemplo: 5">
+        <input type="number" id="n_personas" name="" value="" placeholder="Nº de Personas">
       </div>
 
-      <div class="inputForm">
-        <label for="age1">Edades del Grupo Familiar</label>
-        <label for="age1">0-12</label><input type="text" id="age1" name="" value="" placeholder="Ejemplo: 1">
-        <label for="age2">13-20</label><input type="text" id="age2" name="" value="" placeholder="Ejemplo: 2">
-        <label for="age3">+20</label><input type="text" id="age3" name="" value="" placeholder="Ejemplo: 2">
+      <div class="inputForm ageCont">
+        <div class="ageTitle">
+          <label>Edades del Grupo Familiar</label>
+        </div>
+        <div class="age">
+          <label for="age1">0-12</label><input type="number" id="age1" name="" value="" placeholder="0">
+        </div>
+        <div class="age">
+          <label for="age2">13-20</label><input type="number" id="age2" name="" value="" placeholder="0">
+        </div>
+        <div class="age">
+          <label for="age3">+20</label><input type="number" id="age3" name="" value="" placeholder="0">
+        </div>
       </div>
 
       <div class="inputForm">
@@ -81,12 +100,14 @@
       <div class="inputForm">
         <button type="button" id="btnSave" name="button">Guardar</button>
       </div>
-
     </div>
-      <footer>
-        <p>Sistema hecho por <a href="https:\\simplekodedesign.com">SKD</a></p>
-      </footer>
-    </section>
+    <script type="text/javascript">
+      document.getElementById("main").style.minHeight=window.outerHeight+"px";
+      window.addEventListener("resize",function(){
+        document.getElementById("main").style.minHeight=window.outerHeight+"px";
+      })
+    </script>
     <script type="text/javascript" src="../../js/registro_casa.js"></script>
+    <script type="text/javascript" src="../../js/mainJs.js"></script>
   </body>
 </html>

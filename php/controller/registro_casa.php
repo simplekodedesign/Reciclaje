@@ -5,11 +5,12 @@
 
   $resp = "";
 
-  $resultado = Connection::request("select id from casas where t_identidad like '".$_POST["t_ident"]."' and n_identidad like '".$_POST["n_dent"]."'");
+  $resultado = Connection::request("select id from casas where t_identidad like '".$_POST["t_ident"]."' and n_identidad like '".$_POST["n_ident"]."'");
   if($resultado->rowCount()>0){
     while($result = $resultado->fetch(PDO::FETCH_ASSOC)){
       $id = $result["id"];
     }
+
     Connection::request("update casas set
                           t_identidad='".$_POST["t_ident"]."',
                           n_identidad='".$_POST["n_ident"]."',

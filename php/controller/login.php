@@ -11,6 +11,8 @@
       $pass = $result["password"];
     }
 
+    echo $pass;
+
     if(password_verify($_POST["pass"],$pass)){
         $_SESSION["username"]=$_POST["user"];
         echo "<script>location='../views/home.php';</script>";

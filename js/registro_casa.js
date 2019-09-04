@@ -27,6 +27,7 @@ window.addEventListener("load",function(){
                    "&email="+email.value;
       xhttp.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
+          alert(this.responseText);
           if(this.responseText=="listo"){
             t_ident.value="";
             n_ident.value="";
@@ -45,6 +46,29 @@ window.addEventListener("load",function(){
       xhttp.open("POST", "../controller/registro_casa.php", true);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xhttp.send(params);
+    }
+  })
+  n_ident.addEventListener("keypress",function(tecla){
+    if(t_ident.value!=""&&n_ident.value!=""&&tecla.keyCode == 13){
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+          if(this.responseText!="no"&&this.responseText!=""){
+              var data = this.responseText.split("/");
+              representante.value=data[0];
+              direccion.value=data[1];
+              n_personas.value=data[2];
+              age1.value=data[3];
+              age2.value=data[4];
+              age3.value=data[5];
+              participa.value=data[6];
+              telefono.value=data[7];
+              email.value=data[8];
+          }
+        }
+      }
+      xhttp.open("GET","../controller/search_casa.php?t="+t_ident.value+"&n="+n_ident.value,true);
+      xhttp.send();
     }
   })
 })

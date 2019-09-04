@@ -9,26 +9,42 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Registro</title>
-    <link rel="stylesheet" href="../../css/master.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale-1, shrink-to-fit=no">
+    <title>Por una Ciudad Verde</title>
+    <link rel="stylesheet" href="../../css/style.css">
   </head>
-  <body>
+  <body id="main">
+    <div class="menu" id="menuCont">
+      <div class="user">
+        <img src="../../img/user2.svg" alt="">
+        <p class="username"><?php echo $_SESSION["username"]?></p>
+      </div>
+      <div class="menubtn">
+        <img src="../../img/menu_icon.svg" id="showMenu" alt="">
+      </div>
+      <div class="options" id="menuOptions">
+        <div>
+          <div class="option" id="registrar_casa">
+            Registrar Casa
+          </div>
+        </div>
+        <div>
+          <div class="option" id="estadistica">
+            Estadisticas
+          </div>
+        </div>
+        <div class="option" id="btnSalir">Salir</div>
+      </div>
+    </div>
+    <div class="principal" id="principalCont">
 
-    <header>
-      <div class="navbar">
-        <a href="home.php">Estadísticas</a>
-        <a href="registro_casa.php">Registrar casa</a>
-      </div>
-      <div class="exit">
-        <a href="#">Salir</a>
-      </div>
-    </header>
-    <section>
-      <h1>En desarrollo: Aquí se mostraran las estadisticas</h1>
-    </section>
-    <footer>
-      <p>Sistema hecho por <a href="https:\\simplekodedesign.com">SKD</a></p>
-    </footer>
+    </div>
+    <script type="text/javascript">
+      document.getElementById("main").style.minHeight=window.outerHeight+"px";
+      window.addEventListener("resize",function(){
+        document.getElementById("main").style.minHeight=window.outerHeight+"px";
+      })
+    </script>
+    <script type="text/javascript" src="../../js/mainJs.js"></script>
   </body>
 </html>
