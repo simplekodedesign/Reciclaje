@@ -18,7 +18,7 @@
     <div class="menu" id="menuCont">
       <div class="user">
         <img src="../../img/user2.svg" alt="">
-        <p class="username"><?php echo $_SESSION["username"]?></p>
+        <p class="username">Por una Ciudad Verde</p>
       </div>
       <div class="menubtn">
         <img src="../../img/menu_icon.svg" id="showMenu" alt="">
