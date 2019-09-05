@@ -13,6 +13,16 @@
     <title>Por una Ciudad Verde</title>
     <link rel="stylesheet" href="../../css/style.css">
   </head>
+  <style media="screen">
+    .principal{
+      display: flex;
+      justify-content: center;
+    }
+    .skd{
+      align-self: flex-end;
+      margin-bottom: 100px;
+    }
+  </style>
   <body id="main">
     <div class="menu" id="menuCont">
       <div class="user">
@@ -37,7 +47,9 @@
       </div>
     </div>
     <div class="principal" id="principalCont">
-
+      <div class="skd">
+        <i><b><small>Sistema Hecho por <a href="https://simplekodedesign.com" target="_blank" style="color: blue;">SKD</a></small></b></i>
+      </div>
     </div>
     <script type="text/javascript">
       document.getElementById("main").style.minHeight=window.outerHeight+"px";

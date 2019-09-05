@@ -102,6 +102,11 @@
           <button type="button" id="btnSave" name="button">Guardar</button>
         </div>
       </div>
+      <div class="principal" id="principalCont">
+        <div class="skd">
+          <i><b><small>Sistema Hecho por <a href="https://simplekodedesign.com" target="_blank" style="color: blue;">SKD</a></small></b></i>
+        </div>
+      </div>
     </div>
     <!-- <script type="text/javascript">
       document.getElementById("main").style.minHeight=window.outerHeight+"px";

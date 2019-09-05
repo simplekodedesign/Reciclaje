@@ -84,7 +84,6 @@ body{
   padding: 0;
 }
 
-
 @media(max-width: 500px){
   #main{
     width: 100%;
@@ -98,7 +97,7 @@ body{
   .menu{
       width: 100%;
       background: rgb(31,80,71);
-      height: 50px;
+      height: 50px !important;
       display: flex;
       flex-wrap: wrap;
       position: relative;

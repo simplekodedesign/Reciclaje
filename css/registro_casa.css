@@ -72,6 +72,10 @@ label{
   width: 33%;
 }
 
+.skd{
+  margin: 50px auto;
+}
+
 #direccion{
   width:400px;
   height:100px;

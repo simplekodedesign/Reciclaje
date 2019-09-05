@@ -10,7 +10,7 @@
     <div class="">
       <h1>Por una Ciudad Verde</h1>
     </div>
-    <form class="" action="php/controller/login.php" method="post">
+    <form class="" action="php/controller/login.php" autocomplete="off" method="post">
       <div class="form-control user-control">
         <input type="text" name="user" value="">
       </div>
