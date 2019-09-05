@@ -2,33 +2,44 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   padding: 0;
 }
 
 .titles{
   color: rgb(60,151,120);
-  padding: 0;
   width: 100%;
   text-align: center;
+  margin-top: 50px;
+  height: 80px;
 }
 
-.titles p{
+.container{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.titles h1{
   font-size: 3em;
   font-weight: bold;
+  margin: 0;
 }
 
 .inputForm{
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  min-width: 20%;
+  margin-bottom: 20px;
 }
 
 .inputForm label{
-  margin: 0px 20px;
   font-size: 1.2em;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .ageCont{
@@ -38,16 +49,27 @@
   align-items: center;
 }
 
+.inputForm:last-child{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.inputForm:last-child button{
+  width: 50%
+}
+
 .ageTitle{
   width: 100%;
-  margin-bottom: 10px;
-  text-align: center;
-  margin-bottom: 20px;
+}
+
+label{
+  display: block;
 }
 
 .age{
   width: 33%;
-  text-align: center;
 }
 
 #direccion{
@@ -58,7 +80,7 @@
 
 input{
   border: 1px solid #000;
-  padding: 3px 15px;
+  padding: 5px 10px;
   font-size: 1em;
   margin: 0px 3px;
   cursor: pointer;
@@ -66,14 +88,14 @@ input{
 
 select{
   border: 1px solid #000;
-  padding: 2px 15px;
+  padding: 5px 10px;
   cursor: pointer;
 }
 
 #btnSave{
   background: rgb(31,80,71);
   color: rgb(73,235,187);
-  padding: 10px 30px;
+  padding: 10px;
   border: 1px solid rgb(44,184,72);
   font-size: 1.5em;
   cursor: pointer;
@@ -82,30 +104,32 @@ select{
 
 
 @media(max-width: 500px){
+
+  .titles h1{
+    font-size: 2em;
+  }
+
   .inputForm{
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     margin: 15px auto;
   }
-  .ageTitle{
-    text-align: center;
-  }
+
   .age{
     width: 100%;
     margin: 15px auto;
   }
+
   .inputForm label{
-    width: 100%;
     margin: 10px auto;
-    text-align: center;
-    margin-right: 5px;
   }
+
   input{
     margin: 10px 3px;
     cursor: pointer;
+  }
+
+  .inputForm:last-child{
+    margin: 0;
   }
 
   select{
