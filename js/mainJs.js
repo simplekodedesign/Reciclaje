@@ -1,25 +1,13 @@
 var optionsMenu = document.getElementById("menuOptions");
 var despliegue = false;
+var menuReg = document.getElementById("menuReg");
 
 window.addEventListener("load",function(){
-  if(window.outerWidth>=500){
-    document.getElementById("main").style.minHeight=window.outerHeight+"px";
-    menuCont.style.minHeight=window.outerHeight+"px";
-  }else{
-    document.getElementById("main").style.minHeight="auto";
-    menuCont.style.minHeight="50px";
-  }
-  window.addEventListener("resize",function(){
-    if(window.outerWidth>=500){
-      document.getElementById("main").style.minHeight=window.outerHeight+"px";
-      menuCont.style.minHeight=window.outerHeight+"px";
-      optionsMenu.style.transform = "translateY(42px)";
-      despliegue = false;
+  document.getElementById("showMenuReg").addEventListener("click",function(){
+    if(menuReg.style.display=="none"){
+      menuReg.style.display="block";
     }else{
-      document.getElementById("main").style.minHeight="auto";
-      menuCont.style.minHeight="50px";
-      optionsMenu.style.transform = "translateY(-200%)";
-      despliegue = false;
+      menuReg.style.display="none";
     }
   })
 
@@ -31,10 +19,6 @@ window.addEventListener("load",function(){
       optionsMenu.style.transform = "translateY(-200%)";
       despliegue = false;
     }
-  })
-
-  document.getElementById("registrar_casa").addEventListener("click",function(){
-    location="registro_casa.php";
   })
 
   document.getElementById("estadistica").addEventListener("click",function(){

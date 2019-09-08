@@ -8,7 +8,7 @@
   </head>
   <body id="main">
     <div class="">
-      <h1>Por una Ciudad Verde</h1>
+      <h1>Por mi Ciudad Verde</h1>
     </div>
     <form class="" action="php/controller/login.php" autocomplete="off" method="post">
       <div class="form-control user-control">
@@ -21,11 +21,5 @@
         <input type="submit" name="" value="LOGIN">
       </div>
     </form>
-    <script type="text/javascript">
-      document.getElementById("main").style.minHeight=window.outerHeight+"px";
-      window.addEventListener("resize",function(){
-        document.getElementById("main").style.minHeight=window.outerHeight+"px";
-      })
-    </script>
   </body>
 </html>

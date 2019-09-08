@@ -44,67 +44,42 @@
     <div class="principal" id="principalCont">
       <div class="container">
         <div class="titles">
-          <h1>Registro de Casas</h1>
-        </div>
-        <div class="inputForm">
-          <label for="t_ident">Representante Familiar</label>
-          <select class="" id="t_ident" name="">
-            <option></option>
-            <option>V</option>
-            <option>J</option>
-          </select>
-          <input type="text" placeholder="Nº Identidad" id="n_ident" name="CI" value="">
-          <input type="text" id="representante" placeholder="Apellidos y Nombres" name="nombre" value="">
+          <h1>Registro de Recolección</h1>
         </div>
 
         <div class="inputForm">
-          <label for="direccion">Número de Casa</label>
-          <input type="text" name="n_casa" id="n_casa" value="">
-        </div>
-
-
-        <div class="inputForm">
-          <label for="direccion">Direccion de casa o Residencia</label>
-          <textarea name="name" id="direccion" placeholder="Direccion"></textarea>
+          <label for="n_personas">Fecha de Recolección</label>
+          <input type="date" style="font-size: 1.2em;" id="fecha">
         </div>
 
         <div class="inputForm">
-          <label for="n_personas">Número de Personas en el grupo familiar</label>
-          <input type="number" id="n_personas" name="" value="" placeholder="Nº de Personas">
-        </div>
-
-        <div class="inputForm ageCont">
-          <div class="ageTitle">
-            <label>Edades del Grupo Familiar</label>
-          </div>
-          <div class="age">
-            <label for="age1">0-12</label><input type="number" id="age1" name="" value="" placeholder="0">
-          </div>
-          <div class="age">
-            <label for="age2">13-20</label><input type="number" id="age2" name="" value="" placeholder="0">
-          </div>
-          <div class="age">
-            <label for="age3">+20</label><input type="number" id="age3" name="" value="" placeholder="0">
-          </div>
+          <label for="direccion">Residuos Sólidos no tratados (Kg)</label>
+          <input type="text" name="" class="item" id="item0" value="">
         </div>
 
         <div class="inputForm">
-          <label for="participa">¿Desea participar en el Proyecto?</label>
-          <select class="" id="participa" name="">
-            <option></option>
-            <option>Si</option>
-            <option>No</option>
-          </select>
+          <label for="direccion">Residuos Sólidos tratados (Kg)</label>
+          <input type="text" name="" class="item" id="item1" value="">
         </div>
 
         <div class="inputForm">
-          <label for="telefono">Número de Telefono</label>
-          <input type="number" id="telefono" placeholder="Telefono" name="" value="">
+          <label for="direccion">Plástico</label>
+          <input type="text" name="" class="item" id="item2" value="">
         </div>
 
         <div class="inputForm">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="" placeholder="Email" value="">
+          <label for="direccion">Cartón</label>
+          <input type="text" name="" class="item" id="item3" value="">
+        </div>
+
+        <div class="inputForm">
+          <label for="direccion">Papel</label>
+          <input type="text" name="" class="item" id="item4" value="">
+        </div>
+
+        <div class="inputForm">
+          <label for="direccion">Vidrio</label>
+          <input type="text" name="" class="item" id="item5" value="">
         </div>
 
         <div class="inputForm">
@@ -117,7 +92,7 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="../../js/registro_casa.js"></script>
+    <script type="text/javascript" src="../../js/plastico_dia.js"></script>
     <script type="text/javascript" src="../../js/mainJs.js"></script>
   </body>
 </html>

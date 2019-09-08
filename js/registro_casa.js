@@ -1,6 +1,7 @@
 var t_ident = document.getElementById("t_ident");
 var n_ident = document.getElementById("n_ident");
 var representante = document.getElementById("representante");
+var n_casa = document.getElementById("n_casa");
 var direccion = document.getElementById("direccion");
 var n_personas = document.getElementById("n_personas");
 var age1 = document.getElementById("age1");
@@ -12,11 +13,12 @@ var email = document.getElementById("email");
 
 window.addEventListener("load",function(){
   document.getElementById("btnSave").addEventListener("click",function(){
-    if(t_ident.value!=""&&n_ident.value!=""&&representante.value!=""&&direccion.value!=""&&n_personas.value!=""&&age1.value!=""&&age2.value!=""&&age3.value!=""&&participa.value!=""&&telefono.value!=""&&email.value!=""){
+    if(t_ident.value!=""&&n_ident.value!=""&&representante.value!=""&&n_casa.value!=""&&direccion.value!=""&&n_personas.value!=""&&age1.value!=""&&age2.value!=""&&age3.value!=""&&participa.value!=""&&telefono.value!=""&&email.value!=""){
       var xhttp = new XMLHttpRequest();
       var params = "t_ident="+t_ident.value+
                    "&n_ident="+n_ident.value+
                    "&name="+representante.value+
+                   "&n_casa="+n_casa.value+
                    "&dir="+direccion.value+
                    "&n_personas="+n_personas.value+
                    "&age1="+age1.value+
@@ -27,19 +29,19 @@ window.addEventListener("load",function(){
                    "&email="+email.value;
       xhttp.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
-          alert(this.responseText);
           if(this.responseText=="listo"){
-            t_ident.value="";
-            n_ident.value="";
-            representante.value="";
-            direccion.value="";
-            n_personas.value="";
-            age1.value="";
-            age2.value="";
-            age3.value="";
-            participa.value="";
-            telefono.value="";
-            email.value="";
+            t_ident.value = "";
+            n_ident.value = "";
+            representante.value = "";
+            n_casa.value = "";
+            direccion.value = "";
+            n_personas.value = "";
+            age1.value = "";
+            age2.value = "";
+            age3.value = "";
+            participa.value = "";
+            telefono.value = "";
+            email.value = "";
           }
         }
       }
@@ -48,26 +50,30 @@ window.addEventListener("load",function(){
       xhttp.send(params);
     }
   })
-  n_ident.addEventListener("keypress",function(tecla){
-    if(t_ident.value!=""&&n_ident.value!=""&&tecla.keyCode == 13){
+  n_casa.addEventListener("keypress",function(tecla){
+    if(n_casa.value!=""&&tecla.keyCode == 13){
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
           if(this.responseText!="no"&&this.responseText!=""){
               var data = this.responseText.split("/");
-              representante.value=data[0];
-              direccion.value=data[1];
-              n_personas.value=data[2];
-              age1.value=data[3];
-              age2.value=data[4];
-              age3.value=data[5];
-              participa.value=data[6];
-              telefono.value=data[7];
-              email.value=data[8];
+              t_ident.value = data[0];
+              n_ident.value = data[1];
+              representante.value = data[2];
+              direccion.value = data[3];
+              n_personas.value = data[4];
+              age1.value = data[5];
+              age2.value = data[6];
+              age3.value = data[7];
+              participa.value = data[8];
+              telefono.value = data[9];
+              email.value = data[10];
+          }else if(this.responseText=="no"){
+            alert("El número de casa no se encuentra registrado");
           }
         }
       }
-      xhttp.open("GET","../controller/search_casa.php?t="+t_ident.value+"&n="+n_ident.value,true);
+      xhttp.open("GET","../controller/search_casa.php?n="+n_casa.value,true);
       xhttp.send();
     }
   })

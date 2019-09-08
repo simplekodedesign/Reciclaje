@@ -5,10 +5,12 @@
 
   $resp = "";
 
-  $resultado = Connection::request("select * from casas where t_identidad like '".$_GET["t"]."' and n_identidad like '".$_GET["n"]."'");
+  $resultado = Connection::request("select * from casas where n_casa like '".$_GET["n"]."'");
 
   if($resultado->rowCount()>0){
     while($result = $resultado->fetch(PDO::FETCH_ASSOC)){
+      $resp .= $result["t_identidad"]."/";
+      $resp .= $result["n_identidad"]."/";
       $resp .= $result["nombre"]."/";
       $resp .= $result["direccion"]."/";
       $resp .= $result["n_personas"]."/";

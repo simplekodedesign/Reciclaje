@@ -33,10 +33,13 @@
         <img src="../../img/menu_icon.svg" id="showMenu" alt="">
       </div>
       <div class="options" id="menuOptions">
-        <div>
-          <div class="option" id="registrar_casa">
-            Registrar Casa
-          </div>
+        <div class="option" id="showMenuReg">
+          Registrar
+        </div>
+        <div class="optionReg" id="menuReg">
+          <a href="registro_casa.php"><div class="option">Registrar Casa</div></a>
+          <a href="registro_casa_dia.php"><div class="option">Registrar Dia</div></a>
+          <a href="plastico_dia.php"><div class="option">Cargar Plastico por Dia</div></a>
         </div>
         <div>
           <div class="option" id="estadistica">
@@ -51,12 +54,6 @@
         <i><b><small>Sistema Hecho por <a href="https://simplekodedesign.com" target="_blank" style="color: blue;">SKD</a></small></b></i>
       </div>
     </div>
-    <script type="text/javascript">
-      document.getElementById("main").style.minHeight=window.outerHeight+"px";
-      window.addEventListener("resize",function(){
-        document.getElementById("main").style.minHeight=window.outerHeight+"px";
-      })
-    </script>
     <script type="text/javascript" src="../../js/mainJs.js"></script>
   </body>
 </html>

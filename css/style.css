@@ -84,6 +84,23 @@ body{
   padding: 0;
 }
 
+.optionReg{
+  display: none;
+  transition: all 500ms;
+  background: transparent;
+  z-index: 0;
+  width: 100%;
+}
+
+.optionReg .option{
+  background: transparent;
+  font-size: 1.2em;
+}
+
+.optionReg .option:hover{
+  background: rgb(35,228,205);
+}
+
 @media(max-width: 500px){
   #main{
     width: 100%;

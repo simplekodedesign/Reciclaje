@@ -9,12 +9,11 @@
   if($resultado->rowCount()>0){
     while($result = $resultado->fetch(PDO::FETCH_ASSOC)){
       $pass = $result["password"];
+      $name = $result["nombre"];
     }
 
-    echo $pass;
-
     if(password_verify($_POST["pass"],$pass)){
-        $_SESSION["username"]=$_POST["user"];
+        $_SESSION["username"]=$name;
         echo "<script>location='../views/home.php';</script>";
     }else{
         session_destroy();
