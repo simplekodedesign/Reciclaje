@@ -104,6 +104,17 @@ input[type=number]
   -webkit-appearance: textfield !important;
 }
 
+input[type="date"] {
+  background:#fff url(../img/calendar.png)  97% 50% no-repeat ;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
 textarea{
   resize: none;
   border-radius: 4px;
