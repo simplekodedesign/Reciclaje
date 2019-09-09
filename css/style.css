@@ -13,12 +13,8 @@ body{
   font-family: 'Roboto', sans-serif;
   min-height: 100vh;
   user-select: none;
-}
-
-#main{
   display: flex;
-  flex-wrap: wrap;
-  min-height: 100vh;
+  flex-wrap: nowrap;
 }
 
 .menu{

@@ -2,7 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0;
+  width: 80%;
+  padding: 0 40px;
 }
 
 .titles{
@@ -15,10 +16,11 @@
 
 .container{
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
-  width: 80%;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .titles h1{
@@ -29,24 +31,17 @@
 
 .inputForm{
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: flex-start;
-  min-width: 20%;
-  margin-bottom: 20px;
+  min-width: 25%;
+  margin-bottom: 40px;
 }
 
 .inputForm label{
   font-size: 1.2em;
-  width: 100%;
   margin-bottom: 20px;
-}
-
-.ageCont{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
 
 .inputForm:last-child{
@@ -86,7 +81,7 @@ input{
   border: 1px solid #8f8f8f;
   padding: 5px 10px;
   font-size: 1em;
-  margin: 0px 3px;
+  margin: 10px 3px;
   border-radius: 4px;
   /* background-color: rgb(245, 245, 245); */
 }
