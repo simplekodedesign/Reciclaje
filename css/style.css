@@ -22,12 +22,12 @@ body{
 }
 
 .menu{
-    left: 0;
-    top: 0;
-    position: sticky;
-    width: 20%;
-    background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205));
-    height: 100vh;
+  left: 0;
+  top: 0;
+  position: sticky;
+  width: 20%;
+  background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205));
+  height: 100vh;
 }
 
 .user{
@@ -84,6 +84,10 @@ body{
   font-size: inherit;
 }
 
+.option:hover > .optionReg{
+  display: block;
+}
+
 .optionReg{
   display: none;
   transition: all 500ms;
@@ -116,12 +120,12 @@ body{
   }
 
   .menu{
-      width: 100%;
-      background: rgb(31,80,71);
-      height: 50px !important;
-      display: flex;
-      flex-wrap: wrap;
-      position: relative;
+    width: 100%;
+    background: rgb(31,80,71);
+    height: 50px !important;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
   }
 
   .user{
