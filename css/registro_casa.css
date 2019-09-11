@@ -31,17 +31,20 @@
 
 .inputForm{
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  min-width: 25%;
+  min-width: 300px;
+  width: 20%;
   margin-bottom: 40px;
 }
 
 .inputForm label{
   font-size: 1.2em;
   margin-bottom: 20px;
+  display: block;
+  width: 100%;
 }
 
 .inputForm:last-child{
@@ -52,19 +55,23 @@
 }
 
 .inputForm:last-child button{
-  width: 50%
+  width: 50%;
 }
 
 .ageTitle{
   width: 100%;
 }
 
-label{
-  display: block;
-}
 
 .age{
   width: 33%;
+}
+
+#ageCont{
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .skd{
@@ -119,6 +126,7 @@ textarea{
 select{
   border: 1px solid #8f8f8f;
   padding: 5px 10px;
+  margin: 10px 3px;
   cursor: pointer;
 }
 

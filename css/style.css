@@ -66,29 +66,26 @@ body{
   font-size: 1.5em;
   text-align: left;
   border-top: 2px solid #1f495f;
-  z-index: 0;
   transition: all 500ms;
   background: inherit;
   cursor: pointer;
   text-decoration: none;
+  position: relative;
 }
 
 .option:hover{
   background: rgb(35,228,205);
 }
 
-.principal{
-  width: 80%;
-  margin: 0;
-  padding: 0;
-}
-
 .optionReg{
   display: none;
   transition: all 500ms;
-  background: transparent;
-  z-index: 0;
+  background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205));
+  position: absolute;
+  right: -100%;
+  top: 0;
   width: 100%;
+  height: 100%;
 }
 
 .optionReg .option{
@@ -96,8 +93,18 @@ body{
   font-size: 1.2em;
 }
 
+#showMenuReg:hover .menuReg{
+  display: block !important;
+}
+
 .optionReg .option:hover{
   background: rgb(35,228,205);
+}
+
+.principal{
+  width: 80%;
+  margin: 0;
+  padding: 0;
 }
 
 @media(max-width: 500px){
