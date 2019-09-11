@@ -77,6 +77,10 @@ body{
   background: rgb(35,228,205);
 }
 
+.option:hover > .optionReg{
+  display: block;
+}
+
 .optionReg{
   display: none;
   transition: all 500ms;
