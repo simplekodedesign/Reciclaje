@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale-1, shrink-to-fit=no">
-    <title>Por una Ciudad Verde</title>
+    <title>Por mi Ciudad Verde</title>
     <link rel="stylesheet" href="../../css/style.css">
   </head>
   <style media="screen">
@@ -27,7 +27,7 @@
     <div class="menu" id="menuCont">
       <div class="user">
         <img src="../../img/user2.svg" alt="">
-        <p class="username">Por una Ciudad Verde</p>
+        <p class="username">Por mi Ciudad Verde</p>
       </div>
       <div class="menubtn">
         <img src="../../img/menu_icon.svg" id="showMenu" alt="">

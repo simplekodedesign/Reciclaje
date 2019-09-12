@@ -3,7 +3,6 @@ var n_ident = document.getElementById("n_ident");
 var representante = document.getElementById("representante");
 var n_casa = document.getElementById("n_casa");
 var direccion = document.getElementById("direccion");
-var n_personas = document.getElementById("n_personas");
 var age1 = document.getElementById("age1");
 var age2 = document.getElementById("age2");
 var age3 = document.getElementById("age3");
@@ -13,14 +12,14 @@ var email = document.getElementById("email");
 
 window.addEventListener("load",function(){
   document.getElementById("btnSave").addEventListener("click",function(){
-    if(t_ident.value!=""&&n_ident.value!=""&&representante.value!=""&&n_casa.value!=""&&direccion.value!=""&&n_personas.value!=""&&age1.value!=""&&age2.value!=""&&age3.value!=""&&participa.value!=""&&telefono.value!=""&&email.value!=""){
+    if(t_ident.value!=""&&n_ident.value!=""&&representante.value!=""&&n_casa.value!=""&&direccion.value!=""&&age1.value!=""&&age2.value!=""&&age3.value!=""&&participa.value!=""&&telefono.value!=""&&email.value!=""){
       var xhttp = new XMLHttpRequest();
       var params = "t_ident="+t_ident.value+
                    "&n_ident="+n_ident.value+
                    "&name="+representante.value+
                    "&n_casa="+n_casa.value+
                    "&dir="+direccion.value+
-                   "&n_personas="+n_personas.value+
+                   "&n_personas="+(parseFloat(age1.value)+parseFloat(age3.value)+parseFloat(age2.value))+
                    "&age1="+age1.value+
                    "&age2="+age2.value+
                    "&age3="+age3.value+
@@ -35,7 +34,6 @@ window.addEventListener("load",function(){
             representante.value = "";
             n_casa.value = "";
             direccion.value = "";
-            n_personas.value = "";
             age1.value = "";
             age2.value = "";
             age3.value = "";
@@ -61,13 +59,12 @@ window.addEventListener("load",function(){
               n_ident.value = data[1];
               representante.value = data[2];
               direccion.value = data[3];
-              n_personas.value = data[4];
-              age1.value = data[5];
-              age2.value = data[6];
-              age3.value = data[7];
-              participa.value = data[8];
-              telefono.value = data[9];
-              email.value = data[10];
+              age1.value = data[4];
+              age2.value = data[5];
+              age3.value = data[6];
+              participa.value = data[7];
+              telefono.value = data[8];
+              email.value = data[9];
           }else if(this.responseText=="no"){
             alert("El número de casa no se encuentra registrado");
           }

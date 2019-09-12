@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale-1, shrink-to-fit=no">
-    <title>Por una Ciudad Verde</title>
+    <title>Por mi Ciudad Verde</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/registro_casa.css">
   </head>
@@ -18,7 +18,7 @@
     <header class="menu" id="menuCont">
       <div class="user">
         <img src="../../img/user2.svg" alt="User">
-        <h2 class="username">Por una Ciudad Verde</h2>
+        <h2 class="username">Por mi Ciudad Verde</h2>
       </div>
       <div class="menubtn">
         <img src="../../img/menu_icon.svg" id="showMenu" alt="">
