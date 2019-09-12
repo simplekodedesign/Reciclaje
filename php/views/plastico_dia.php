@@ -1,9 +1,9 @@
-<!-- <?php
+<?php
   session_start();
   if(!isset($_SESSION["username"])){
     echo "<script>location='../../index.php'</script>";
   }
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
