@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale-1, shrink-to-fit=no">
-    <title>Por una Ciudad Verde</title>
+    <title>Por mi Ciudad Verde</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/registro_casa.css">
   </head>
@@ -18,7 +18,7 @@
     <header class="menu" id="menuCont">
       <div class="user">
         <img src="../../img/user2.svg" alt="User">
-        <h2 class="username">Por una Ciudad Verde</h2>
+        <h2 class="username">Por mi Ciudad Verde</h2>
       </div>
       <div class="menubtn">
         <img src="../../img/menu_icon.svg" id="showMenu" alt="">
@@ -27,9 +27,9 @@
         <div class="option" id="showMenuReg">
           Registrar
           <div class="optionReg" id="menuReg">
-            <a href="registro_casa.php"><div class="option">Registrar Casa</div></a>
-            <a href="registro_casa_dia.php"><div class="option">Registrar Dia</div></a>
-            <a href="plastico_dia.php"><div class="option">Cargar Plastico por Dia</div></a>
+            <a href="registro_casa.php" class="option link">Registrar Casa</a>
+            <a href="registro_casa_dia.php" class="option link">Registrar Dia</a>
+            <a href="plastico_dia.php" class="option link">Cargar Plastico por Dia</a>
           </div>
         </div>
         <div>

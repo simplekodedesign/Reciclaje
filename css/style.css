@@ -5,6 +5,10 @@
   src: local(roboto), url('../font/Roboto-Regular.ttf') format('ttf');
 }
 
+*{
+  box-sizing: border-box;
+}
+
 @import url('../font/Roboto-Regular.ttf');
 
 body{
@@ -47,12 +51,10 @@ body{
 }
 
 .options{
-  transition: all 500ms;
-  background: transparent;
-  z-index: 0;
   margin: 9px 0px;
-  width: 100%;
   position: relative;
+  transition: all 500ms;
+  width: 100%;
 }
 
 .options a{
@@ -62,6 +64,7 @@ body{
 .option{
   list-style: none;
   padding: 15px;
+  display: block;
   color: #1f495f;
   font-size: 1.5em;
   text-align: left;
@@ -77,6 +80,10 @@ body{
   background: rgb(35,228,205);
 }
 
+.optionReg a{
+  font-size: inherit;
+}
+
 .option:hover > .optionReg{
   display: block;
 }
@@ -87,13 +94,9 @@ body{
   background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205));
   position: absolute;
   right: -100%;
-  top: 0;
+  top: -2px;
   width: 100%;
   min-height: 100%;
-}
-
-#showMenuReg:hover .menuReg{
-  display: block;
 }
 
 .optionReg .option:hover{
@@ -170,7 +173,6 @@ body{
     transform: translateY(-200%);
     transition: all 500ms;
     background: #1f495f;
-    z-index: 0;
     margin: 9px 0px;
     width: 100%;
     position: absolute;

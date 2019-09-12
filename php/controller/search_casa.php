@@ -13,7 +13,6 @@
       $resp .= $result["n_identidad"]."/";
       $resp .= $result["nombre"]."/";
       $resp .= $result["direccion"]."/";
-      $resp .= $result["n_personas"]."/";
       $resp .= $result["age_0_12"]."/";
       $resp .= $result["age_13_20"]."/";
       $resp .= $result["age_20_100"]."/";
