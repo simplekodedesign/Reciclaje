@@ -9,6 +9,11 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 @import url('../font/Roboto-Regular.ttf');
 
 body{
@@ -26,7 +31,7 @@ body{
   top: 0;
   position: sticky;
   width: 20%;
-  background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205));
+  /* background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205)); */
   height: 100vh;
 }
 
