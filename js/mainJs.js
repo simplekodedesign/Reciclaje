@@ -1,6 +1,7 @@
 var optionsMenu = document.getElementById("menuOptions");
 var despliegue = false;
 var menuReg = document.getElementById("menuReg");
+var menuEst = document.getElementById("menuEst");
 
 window.addEventListener("load",function(){
   document.getElementById("showMenuReg").addEventListener("click",function(){
@@ -8,6 +9,14 @@ window.addEventListener("load",function(){
       menuReg.style.display="block";
     }else{
       menuReg.style.display="none";
+    }
+  })
+
+  document.getElementById("showMenuEst").addEventListener("click",function(){
+    if(menuEst.style.display=="none"){
+      menuEst.style.display="block";
+    }else{
+      menuEst.style.display="none";
     }
   })
 
@@ -19,10 +28,6 @@ window.addEventListener("load",function(){
       optionsMenu.style.transform = "translateY(-200%)";
       despliegue = false;
     }
-  })
-
-  document.getElementById("estadistica").addEventListener("click",function(){
-    location="home.php";
   })
 
   document.getElementById("btnSalir").addEventListener("click",function(){

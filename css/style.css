@@ -80,15 +80,18 @@ body{
   background: rgb(35,228,205);
 }
 
-.optionReg a{
+.optionReg a,
+.optionEst a{
   font-size: inherit;
 }
 
-.option:hover > .optionReg{
+.option:hover > .optionReg
+.option:hover > .optionEst{
   display: block;
 }
 
-.optionReg{
+.optionReg,
+.optionEst{
   display: none;
   transition: all 500ms;
   background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205));

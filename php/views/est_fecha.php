@@ -1,9 +1,9 @@
-<?php
+<!-- <?php
   session_start();
   if(!isset($_SESSION["username"])){
     echo "<script>location='../../index.php'</script>";
   }
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale-1, shrink-to-fit=no">
     <title>Por mi Ciudad Verde</title>
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/registro_casa.css">
+    <link rel="stylesheet" href="../../css/estadistica.css">
   </head>
   <body id="main">
     <header class="menu" id="menuCont">
@@ -47,29 +47,51 @@
     <div class="principal" id="principalCont">
       <div class="container">
         <div class="titles">
-          <h1>Participación por Día</h1>
+          <h1>Estadisticas por fecha</h1>
         </div>
 
         <div class="inputForm">
-          <label for="n_personas">Fecha de Participación</label>
-          <input type="date" style="font-size: 1.2em;" id="fecha">
+          <label for="n_personas">Desde: </label>
+          <input type="date" style="font-size: 1.2em;" id="desde">
         </div>
 
         <div class="inputForm">
-          <label for="direccion">Número de Casa</label>
-          <input type="text" name="n_casa" id="n_casa" value="">
+          <label for="n_personas">Hasta: </label>
+          <input type="date" style="font-size: 1.2em;" id="hasta">
         </div>
 
         <div class="inputForm">
-          <label for="participa">¿Participó?</label>
-          <select class="" id="participa" name="">
-            <option>No</option>
-            <option>Si</option>
-          </select>
+          <button type="button" id="btnSearch" name="button">Buscar</button>
         </div>
 
-        <div class="inputForm">
-          <button type="button" id="btnSave" name="button">Guardar</button>
+        <table id='filterCont'>
+          <tr>
+            <th>Nº Casa</th>
+            <th>Fecha</th>
+            <th>Residuos no Tratados</th>
+            <th>Residuos Tratados</th>
+            <th>Plastico</th>
+            <th>Carton</th>
+            <th>Papel</th>
+            <th>Vidrio</th>
+            <th>Metal</th>
+          </tr>
+        </table>
+        <div class="totales">
+          <div class="">
+            <p><b>Residuos no tratados: </b><span id="dat0">0</span></p>
+            <p><b>Residuos tratados: </b><span id="dat1">0</span></p>
+            <p><b>Plastico: </b><span id="dat2">0</span></p>
+            <p><b>Carton: </b><span id="dat3">0</span></p>
+            <p><b>Papel: </b><span id="dat4">0</span></p>
+            <p><b>Vidrio: </b><span id="dat5">0</span></p>
+            <p><b>Metal: </b><span id="dat6">0</span></p>
+          </div>
+          <div class="">
+              <p><b>Cantidad de participantes: </b><span id="csi">0</span></p>
+              <p><b>Cantidad de no participantes: </b><span id="cno">0</span></p>
+              <p><b>Personas que dieron otro uso: </b><span id="cotro">0</span></p>
+          </div>
         </div>
       </div>
       <div class="principal" id="principalCont">
@@ -78,7 +100,7 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="../../js/registro_casa_dia.js"></script>
+    <script type="text/javascript" src="../../js/est_fecha.js"></script>
     <script type="text/javascript" src="../../js/mainJs.js"></script>
   </body>
 </html>

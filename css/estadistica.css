@@ -1,0 +1,117 @@
+.principal{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  padding: 0 40px;
+}
+
+.titles{
+  color: rgb(60,151,120);
+  width: 100%;
+  text-align: center;
+  margin: 25px auto;
+}
+
+.totales{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.totales>div{
+  width: 50%;
+}
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.titles h1{
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.inputForm{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 300px;
+  width: 20%;
+  margin-bottom: 40px;
+}
+
+.inputForm label{
+  font-size: 1.2em;
+  display: block;
+  width: 100%;
+}
+
+.inputForm:last-child{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.inputForm:last-child button{
+  width: 20%;
+}
+
+.skd{
+  margin: 50px auto;
+}
+
+input{
+  border: 1px solid #8f8f8f;
+  padding: 5px 10px;
+  font-size: 1em;
+  margin: 10px 3px;
+  border-radius: 4px;
+}
+
+input[type="date"] {
+  background:#fff url(../img/calendar.png)  97% 50% no-repeat ;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+#btnSearch{
+  background: rgb(31,80,71);
+  color: rgb(73,235,187);
+  padding: 10px;
+  border: 1px solid rgb(44,184,72);
+  font-size: 1.5em;
+  cursor: pointer;
+  align-self: center;
+}
+
+#filterCont{
+  width: 100%;
+  text-align: center;
+}
+
+#filterCont th,
+#filterCont td{
+  border: 1px solid #000;
+}
+
+.totales{
+  margin-top: 25px;
+}
+
+@media(max-width: 500px){
+
+}

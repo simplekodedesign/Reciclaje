@@ -26,16 +26,19 @@
       <div class="options" id="menuOptions">
         <div class="option" id="showMenuReg">
           Registrar
-          <div class="optionReg" id="menuReg">
-            <a href="registro_casa.php" class="option link">Registrar Casa</a>
-            <a href="registro_casa_dia.php" class="option link">Registrar Dia</a>
-            <a href="plastico_dia.php" class="option link">Cargar Plastico por Dia</a>
-          </div>
         </div>
-        <div>
-          <div class="option" id="estadistica">
-            Estadisticas
-          </div>
+        <div class="optionReg" id="menuReg">
+          <a href="registro_casa.php"><div class="option">Registrar Casa</div></a>
+          <a href="registro_casa_dia.php"><div class="option">Registrar Dia</div></a>
+          <a href="plastico_dia.php"><div class="option">Cargar Plastico por Dia</div></a>
+        </div>
+        <div class="option" id="showMenuEst">
+          Estadisticas
+        </div>
+        <div class="optionEst" id="menuEst">
+          <a href="est_fecha.php"><div class="option">Por Fecha</div></a>
+          <a href="est_sector.php"><div class="option">Por Sector</div></a>
+          <a href="est_casa.php"><div class="option">Por Casa</div></a>
         </div>
         <div class="option" id="btnSalir">Salir</div>
       </div>
