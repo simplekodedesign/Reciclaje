@@ -42,12 +42,7 @@
           <a href="plastico_dia.php"><div class="option">Cargar Plastico por Dia</div></a>
         </div>
         <div class="option" id="showMenuEst">
-          Estadisticas
-        </div>
-        <div class="optionEst" id="menuEst">
-          <a href="est_fecha.php"><div class="option">Por Fecha</div></a>
-          <a href="est_sector.php"><div class="option">Por Sector</div></a>
-          <a href="est_casa.php"><div class="option">Por Casa</div></a>
+          <a href="estadisticas.php">Estadisticas</a>
         </div>
         <div class="option" id="btnSalir">Salir</div>
       </div>

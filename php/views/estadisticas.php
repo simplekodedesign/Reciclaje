@@ -33,12 +33,7 @@
           <a href="plastico_dia.php"><div class="option">Cargar Plastico por Dia</div></a>
         </div>
         <div class="option" id="showMenuEst">
-          Estadisticas
-        </div>
-        <div class="optionEst" id="menuEst">
-          <a href="est_fecha.php"><div class="option">Por Fecha</div></a>
-          <a href="est_sector.php"><div class="option">Por Sector</div></a>
-          <a href="est_casa.php"><div class="option">Por Casa</div></a>
+          <a href="estadisticas.php">Estadisticas</a>
         </div>
         <div class="option" id="btnSalir">Salir</div>
       </div>
@@ -47,31 +42,30 @@
     <div class="principal" id="principalCont">
       <div class="container">
         <div class="titles">
-          <h1>Estadisticas por Casa</h1>
+          <h1>Estadisticas</h1>
         </div>
 
-        <div class="inputForm">
-          <label for="n_personas">Sector: </label>
-          <input type="text" style="font-size: 1.2em;" id="casa">
+        <div class="">
+          <select class="" name="" id="filter">
+            <option></option>
+            <option>Fecha</option>
+            <option>Sector</option>
+            <option>Casa</option>
+          </select>
+        </div>
+
+        <div id="contenedor">
+
         </div>
 
         <div class="inputForm">
           <button type="button" id="btnSearch" name="button">Buscar</button>
         </div>
 
-        <table id='filterCont'>
-          <tr>
-            <th>Fecha</th>
-            <th>Participacion</th>
-            <th>Residuos no Tratados</th>
-            <th>Residuos Tratados</th>
-            <th>Plastico</th>
-            <th>Carton</th>
-            <th>Papel</th>
-            <th>Vidrio</th>
-            <th>Metal</th>
-          </tr>
+        <table id="filterCont">
+
         </table>
+
         <div class="totales">
           <div class="">
             <p><b>Residuos no tratados: </b><span id="dat0">0</span></p>
@@ -83,11 +77,12 @@
             <p><b>Metal: </b><span id="dat6">0</span></p>
           </div>
           <div class="">
-              <p><b>Veces que participo: </b><span id="csi">0</span></p>
-              <p><b>Veces que no participo: </b><span id="cno">0</span></p>
-              <p><b>Veces que dio otro uso: </b><span id="cotro">0</span></p>
+              <p><b>Cantidad de participantes: </b><span id="csi">0</span></p>
+              <p><b>Cantidad de no participantes: </b><span id="cno">0</span></p>
+              <p><b>Personas que dieron otro uso: </b><span id="cotro">0</span></p>
           </div>
         </div>
+
       </div>
       <div class="principal" id="principalCont">
         <div class="skd">
@@ -95,7 +90,7 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="../../js/est_casa.js"></script>
+    <script type="text/javascript" src="../../js/estadisticas.js"></script>
     <script type="text/javascript" src="../../js/mainJs.js"></script>
   </body>
 </html>
