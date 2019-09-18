@@ -138,6 +138,18 @@ header{
   background: rgb(35,228,205);
 }
 
+.optionL .option:nth-child(1)::before{
+  background-image: url('../img/ios-home.svg');
+}
+
+.optionL .option:nth-child(2)::before{
+  background-image: url('../img/calendar.svg');
+}
+
+.optionL .option:nth-child(3)::before{
+  background-image: url('../img/add.svg');
+}
+
 /*---------------------------------SECTION--------------------------------*/
 
 .principal{
@@ -149,9 +161,13 @@ header{
   align-content: center;
 }
 
-.skd{
+footer{
   align-self: center;
   margin-bottom: 100px;
+}
+
+footer a{
+  color: green;
 }
 
 @media(max-width: 500px){

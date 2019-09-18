@@ -24,9 +24,9 @@
         <div class="option" id="showMenuReg">
           Registrar
           <div class="optionL" id="menuReg">
-            <a href="registro_casa.php"><div class="option">Casa</div></a>
-            <a href="registro_casa_dia.php"><div class="option">Dia</div></a>
-            <a href="plastico_dia.php"><div class="option">Plastico por Dia</div></a>
+            <a class="option" href="registro_casa.php">Casa</a>
+            <a class="option" href="registro_casa_dia.php">Dia</a>
+            <a class="option" href="plastico_dia.php">Plastico por Dia</a>
           </div>
         </div>
         <div class="option" id="showMenuEst">
@@ -104,11 +104,9 @@
           <button type="button" id="btnSave" name="button">Guardar</button>
         </div>
       </div>
-      <div class="principal" id="principalCont">
-        <div class="skd">
-          <i><b><small>Sistema Hecho por <a href="https://simplekodedesign.com" target="_blank" style="color: blue;">SKD</a></small></b></i>
-        </div>
-      </div>
+      <footer id="skd">
+          <b>Sistema Hecho por <a href="https://simplekodedesign.com" target="_blank">SKD</a></b>
+      </footer>
     </div>
     <script type="text/javascript" src="../../js/registro_casa.js"></script>
     <script type="text/javascript" src="../../js/mainJs.js"></script>

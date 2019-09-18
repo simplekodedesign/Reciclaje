@@ -15,27 +15,27 @@
     <link rel="stylesheet" href="../../css/estadistica.css">
   </head>
   <body id="main">
-    <header class="menu" id="menuCont">
-      <div class="user">
-        <img src="../../img/user2.svg" alt="User">
-        <h2 class="username">Por mi Ciudad Verde</h2>
-      </div>
-      <div class="menubtn">
-        <img src="../../img/menu_icon.svg" id="showMenu" alt="">
-      </div>
+    <header id="menuCont">
       <div class="options" id="menuOptions">
+        <div class="user">
+          <img src="../../img/person.svg" alt="User">
+          <p>Por mi Ciudad Verde</p>
+        </div>
         <div class="option" id="showMenuReg">
           Registrar
-        </div>
-        <div class="optionReg" id="menuReg">
-          <a href="registro_casa.php"><div class="option">Registrar Casa</div></a>
-          <a href="registro_casa_dia.php"><div class="option">Registrar Dia</div></a>
-          <a href="plastico_dia.php"><div class="option">Cargar Plastico por Dia</div></a>
+          <div class="optionL" id="menuReg">
+            <a class="option" href="registro_casa.php">Casa</a>
+            <a class="option" href="registro_casa_dia.php">Dia</a>
+            <a class="option" href="plastico_dia.php">Plastico por Dia</a>
+          </div>
         </div>
         <div class="option" id="showMenuEst">
           <a href="estadisticas.php">Estadisticas</a>
         </div>
-        <div class="option" id="btnSalir">Salir</div>
+      </div>
+      <div class="option" id="btnSalir">Salir</div>
+      <div class="menubtn">
+        <img src="../../img/menu_icon.svg" id="showMenu" alt="Icon">
       </div>
     </header>
 
