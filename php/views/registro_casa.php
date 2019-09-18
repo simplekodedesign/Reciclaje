@@ -29,9 +29,7 @@
             <a class="option" href="plastico_dia.php">Plastico por Dia</a>
           </div>
         </div>
-        <div class="option" id="showMenuEst">
-          <a href="estadisticas.php">Estadisticas</a>
-        </div>
+        <a class="option" id="showMenuEst" href="estadisticas.php">Estadisticas</a>
       </div>
       <div class="option" id="btnSalir">Salir</div>
       <div class="menubtn">

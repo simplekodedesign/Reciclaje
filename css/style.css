@@ -18,6 +18,11 @@
        url('../fonts/dancing-script-v11-latin-700.svg#DancingScript') format('svg'); /* Legacy iOS */
 }
 
+:root{
+  --primary: #008F39; /*Green*/
+  --secondary: #f0f0f0;
+}
+
 *{
   box-sizing: border-box;
 }
@@ -28,13 +33,12 @@ a {
 }
 
 body{
+  display: flex;
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
   min-height: 100vh;
   user-select: none;
-  display: flex;
-  flex-wrap: nowrap;
 }
 
 h1, .user{
@@ -46,14 +50,15 @@ h1, .user{
 /*---------------------------------HEADER--------------------------------*/
 
 header{
+  background-color: var(--secondary);
   left: 0;
   top: 0;
   position: sticky;
   width: 7%;
+  color: var(--primary);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205)); */
   height: 100vh;
 }
 
@@ -117,7 +122,8 @@ header{
 }
 
 .option:hover{
-  background: rgb(35,228,205);
+  background: var(--primary);
+  color: var(--secondary);
 }
 
 .option:hover > .optionL{
@@ -125,6 +131,8 @@ header{
 }
 
 .optionL{
+  background-color: var(--secondary);
+  color: var(--primary);
   display: none;
   transition: all 500ms;
   position: absolute;
@@ -135,7 +143,8 @@ header{
 }
 
 .optionL .option:hover{
-  background: rgb(35,228,205);
+  background-color: var(--primary);
+  color: var(--secondary);
 }
 
 .optionL .option:nth-child(1)::before{
@@ -150,9 +159,14 @@ header{
   background-image: url('../img/add.svg');
 }
 
+.showMenu{
+  transform: scale(1);
+}
+
 /*---------------------------------SECTION--------------------------------*/
 
 .principal{
+  background-color: white;
   width: 93%;
   margin: 0;
   padding: 10px 40px;
@@ -167,26 +181,16 @@ footer{
 }
 
 footer a{
-  color: green;
+  color: var(--primary);
 }
 
 @media(max-width: 500px){
-  #main{
-    width: 100%;
-    overflow: scroll;
-  }
 
-  #main::-webkit-scrollbar{
-    width: 0px;
-  }
-
-  .menu{
+  header{
     width: 100%;
-    background: rgb(31,80,71);
-    height: 50px !important;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
+    height: 7%;
+    flex-direction: row;
+    left: auto;
   }
 
   .user{
@@ -196,10 +200,6 @@ footer a{
   }
 
   .username{
-    font-weight: bold;
-    font-size: 1em;
-    color: white;
-    align-self: center;
     margin-left: 8px;
     margin: 5px 0px 0px 10px;
   }
@@ -208,10 +208,6 @@ footer a{
     width: 32px;
     margin: 5px 0px 0px 10px;
     align-self: center;
-  }
-
-  .principal{
-    width: 100%;
   }
 
   .menubtn{
@@ -231,28 +227,21 @@ footer a{
   }
 
   .options{
-    transform: translateY(-200%);
+    transform-origin: top;
+    transform: scaleY(0);
     transition: all 500ms;
-    background: #1f495f;
     margin: 9px 0px;
     width: 100%;
     position: absolute;
   }
 
   .option{
-    list-style: none;
     padding: 15px;
-    color: #fff;
-    font-size: 1.3em;
-    text-align: left;
-    border-top: 2px solid #fff;
-    z-index: 0;
     transition: all 500ms;
-    background: rgb(31,80,71);
-    text-decoration: none;
+    z-index: 0;
   }
 
-  .option:hover{
-    background: #37bfbf;
+  .showMenu{
+    transform: scaleY(1);
   }
 }
