@@ -2,72 +2,16 @@ var filter = document.getElementById("filter");
 var contenedor = document.getElementById("contenedor");
 var table = document.getElementById("filterCont");
 
-window.addEventListener("load",function(){
-  filter.addEventListener("change",function(){
-    for(var i = 0; i < 7; i++){
-      document.getElementById("dat"+i).innerHTML = 0;
-    }
-    document.getElementById("csi").innerHTML = 0;
-    document.getElementById("cno").innerHTML = 0;
-    document.getElementById("cotro").innerHTML = 0;
-    switch(filter.value){
-      case "Fecha":
-        contenedor.innerHTML = "<div class='inputForm'>"+
-                               "<label for='n_personas'>Desde: </label>"+
-                               "<input type='date' style='font-size: 1.2em;' id='desde'>"+
-                               "</div>"+
-                               "<div class='inputForm'>"+
-                               "<label for='n_personas'>Hasta: </label>"+
-                               "<input type='date' style='font-size: 1.2em;' id='hasta'>"+
-                               "</div>";
-        table.innerHTML = "<tr>"+
-                          "<th>Fecha</th>"+
-                          "<th>Residuos no Tratados</th>"+
-                          "<th>Residuos Tratados</th>"+
-                          "<th>Plastico</th>"+
-                          "<th>Carton</th>"+
-                          "<th>Papel</th>"+
-                          "<th>Vidrio</th>"+
-                          "<th>Metal</th>"+
-                          "</tr>";
-        break;
-      case "Sector":
-        contenedor.innerHTML = "<div class='inputForm'>"+
-                               "<label for='n_personas'>Sector: </label>"+
-                               "<input type='text' style='font-size: 1.2em;' id='sector'>"+
-                               "</div>";
-        table.innerHTML = "<tr>"+
-                          "<th>Nº Casa</th>"+
-                          "<th>Fecha</th>"+
-                          "<th>Residuos no Tratados</th>"+
-                          "<th>Residuos Tratados</th>"+
-                          "<th>Plastico</th>"+
-                          "<th>Carton</th>"+
-                          "<th>Papel</th>"+
-                          "<th>Vidrio</th>"+
-                          "<th>Metal</th>"+
-                          "</tr>";
-        break;
-      case "Casa":
-        contenedor.innerHTML = "<div class='inputForm'>"+
-                               "<label for='n_personas'>Casa: </label>"+
-                               "<input type='text' style='font-size: 1.2em;' id='casa'>"+
-                               "</div>";
-        table.innerHTML = "<tr>"+
-                          "<th>Fecha</th>"+
-                          "<th>Participacion</th>"+
-                          "<th>Residuos no Tratados</th>"+
-                          "<th>Residuos Tratados</th>"+
-                          "<th>Plastico</th>"+
-                          "<th>Carton</th>"+
-                          "<th>Papel</th>"+
-                          "<th>Vidrio</th>"+
-                          "<th>Metal</th>"+
-                          "</tr>";
-        break;
-    }
-  })
+var headerStatic = ["Residuos no Tratados", "Residuos Tratados", "Plástico", "Cartón", "Papel", "Vidrio", "Metal"]
 
+var headerSelect = [
+  ["Fecha"],
+  ["N° Casa", "Fecha"],
+  ["Fecha", "Participación"]
+];
+
+window.addEventListener("load",function(){
+  filter.addEventListener("change", tableConstructor);
   document.getElementById("btnSearch").addEventListener("click",function(){
     if(filter.value!=""){
       switch(filter.value){
@@ -85,6 +29,118 @@ window.addEventListener("load",function(){
   })
 })
 
+function tableConstructor (data) {
+  while(contenedor.firstElementChild)contenedor.removeChild(contenedor.firstElementChild);
+  let div1, div2, label1, label2, input1, input2;
+  let indexHS; // Index para headerSelect
+  let tr = document.createElement("tr");
+  let th; // Th para las tablas
+  let columnas;
+  // let value = this.value? this.value : data;
+  switch (this.value ? this.value: data) {
+    case "Fecha":
+      indexHS = 0;
+      if(this.value) {
+        div1 = document.createElement("div");
+        div2 = document.createElement("div");
+        div1.classList.add("inputForm");
+        div2.classList.add("inputForm");
+        label1 = document.createElement("label");
+        label2 = document.createElement("label")
+        label1.setAttribute("for", "n_personas");
+        label2.setAttribute("for", "n_personas");
+        input1 = document.createElement("input");
+        input2 = document.createElement("input");
+        input1.setAttribute("type", "date");
+        input2.setAttribute("type", "date");
+        label1.innerHTML = "Desde: ";
+        label2.innerHTML = "Hasta: ";
+        input1.setAttribute("id", "desde");
+        input2.setAttribute("id", "hasta");
+        div1.appendChild(label1);
+        div1.appendChild(input1);
+        div2.appendChild(label2);
+        div2.appendChild(input2);
+        contenedor.appendChild(div1);
+        contenedor.appendChild(div2);
+      }
+    break;
+    case "Sector":
+      indexHS = 1;
+      if(this.value) {
+        div1 = document.createElement("div");
+        div1.classList.add("inputForm");
+        label1 = document.createElement("label")
+        label1.setAttribute("for", "n_personas");
+        input1 = document.createElement("input");
+        input1.setAttribute("type", "text");
+        input1.setAttribute("id", "sector");
+        label1.innerHTML = "Sector: ";
+        div1.appendChild(label1);
+        div1.appendChild(input1);
+        contenedor.appendChild(div1);
+      }
+    break;
+    case "Casa":
+      indexHS = 2;
+      if(this.value) {
+        div1 = document.createElement("div");
+        div1.classList.add("inputForm");
+        label1 = document.createElement("label")
+        label1.setAttribute("for", "n_personas");
+        input1 = document.createElement("input");
+        input1.setAttribute("type", "text");
+        input1.setAttribute("id", "casa");
+        label1.innerHTML = "Casa: ";
+        div1.appendChild(label1);
+        div1.appendChild(input1);
+        contenedor.appendChild(div1);
+      }
+    break;
+    default:
+    break;
+  }
+  hs = headerSelect[indexHS];
+  lengthHS = hs.length;
+  columnas = headerStatic.length + lengthHS;
+
+  for(var i = 0; i < columnas; i++) {
+    th = document.createElement("th");
+    if(i < lengthHS) {
+      th.innerHTML = hs[i];
+    } else {
+      th.innerHTML = headerStatic[i - lengthHS];
+    }
+    tr.appendChild(th);
+  }
+
+  if(table.firstElementChild) {
+    table.replaceChild(tr, table.firstElementChild);
+  } else {
+    table.appendChild(tr);
+  }
+}
+
+function filasConstructor (data) {
+  while(table.lastElementChild != table.firstElementChild)table.removeChild(table.lastChild);
+  let tr, td;
+  let filas = data.length;
+  let columnas = data[0].length;
+  for (var i = 0; i < filas; i++) {
+    tr = document.createElement("tr");
+    for (var j = 0; j < columnas; j++) {
+      td = document.createElement("td");
+      if(data[i][j] == null) {
+        td.innerHTML = "0";
+      } else {
+        td.innerHTML = data[i][j];
+      }
+      tr.appendChild(td);
+    }
+    table.appendChild(tr);
+  }
+}
+
 
 function filterFecha(){
   var desde = document.getElementById("desde");
@@ -96,18 +152,12 @@ function filterFecha(){
     var h = hasta.value.split("-")[2]+"-"+hasta.value.split("-")[1]+"-"+hasta.value.split("-")[0];
     var cant;
     var t;
+    var filas;
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
-        table.innerHTML = "<tr>"+
-                          "<th>Fecha</th>"+
-                          "<th>Residuos no Tratados</th>"+
-                          "<th>Residuos Tratados</th>"+
-                          "<th>Plastico</th>"+
-                          "<th>Carton</th>"+
-                          "<th>Papel</th>"+
-                          "<th>Vidrio</th>"+
-                          "<th>Metal</th>"+
-                          "</tr>"+this.responseText;
+        filas = JSON.parse(this.responseText);
+        console.log(filas);
+        filasConstructor(filas);
         for(var i = 0; i < 7; i++){
           cant = document.querySelectorAll(".item"+i);
           t = 0;
@@ -131,20 +181,12 @@ function filterSector(){
     var xhttp = new XMLHttpRequest();
     var cant;
     var t;
+    var filas;
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
-        console.log(this.responseText);
-        table.innerHTML = "<tr>"+
-                          "<th>Nº Casa</th>"+
-                          "<th>Fecha</th>"+
-                          "<th>Residuos no Tratados</th>"+
-                          "<th>Residuos Tratados</th>"+
-                          "<th>Plastico</th>"+
-                          "<th>Carton</th>"+
-                          "<th>Papel</th>"+
-                          "<th>Vidrio</th>"+
-                          "<th>Metal</th>"+
-                          "</tr>"+this.responseText;
+        filas = JSON.parse(this.responseText);
+        console.log(filas);
+        filasConstructor(filas);
         for(var i = 0; i < 7; i++){
           cant = document.querySelectorAll(".item"+i);
           t = 0;
@@ -168,20 +210,12 @@ function filterCasa(){
     var xhttp = new XMLHttpRequest();
     var cant;
     var t;
+    var filas;
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
-        console.log(this.responseText);
-        table.innerHTML = "<tr>"+
-                          "<th>Fecha</th>"+
-                          "<th>Participacion</th>"+
-                          "<th>Residuos no Tratados</th>"+
-                          "<th>Residuos Tratados</th>"+
-                          "<th>Plastico</th>"+
-                          "<th>Carton</th>"+
-                          "<th>Papel</th>"+
-                          "<th>Vidrio</th>"+
-                          "<th>Metal</th>"+
-                          "</tr>"+this.responseText;
+        filas = JSON.parse(this.responseText);
+        console.log(filas);
+        filasConstructor(filas);
         for(var i = 0; i < 7; i++){
           cant = document.querySelectorAll(".item"+i);
           t = 0;

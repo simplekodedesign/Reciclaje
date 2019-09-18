@@ -6,7 +6,7 @@ body{
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205));
+  /* background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205)); */
   overflow: hidden;
   text-align: center;
 }
