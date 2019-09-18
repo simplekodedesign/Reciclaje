@@ -62,9 +62,22 @@
           <button type="button" id="btnSearch" name="button">Buscar</button>
         </div>
 
+
+
+        
+
         <table id="filterCont">
 
         </table>
+
+
+
+
+
+
+
+
+
 
         <div class="totales">
           <div class="">
