@@ -27,8 +27,6 @@ window.addEventListener("load",function(){
       }
     }
   })
-
-  test();
 })
 
 function tableConstructor (data) {
@@ -76,6 +74,7 @@ function tableConstructor (data) {
         label1.setAttribute("for", "n_personas");
         input1 = document.createElement("input");
         input1.setAttribute("type", "text");
+        input1.setAttribute("id", "sector");
         label1.innerHTML = "Sector: ";
         div1.appendChild(label1);
         div1.appendChild(input1);
@@ -91,6 +90,7 @@ function tableConstructor (data) {
         label1.setAttribute("for", "n_personas");
         input1 = document.createElement("input");
         input1.setAttribute("type", "text");
+        input1.setAttribute("id", "casa");
         label1.innerHTML = "Casa: ";
         div1.appendChild(label1);
         div1.appendChild(input1);
@@ -121,6 +121,26 @@ function tableConstructor (data) {
   }
 }
 
+function filasConstructor (data) {
+  while(table.lastElementChild != table.firstElementChild)table.removeChild(table.lastChild);
+  let tr, td;
+  let filas = data.length;
+  let columnas = data[0].length;
+  for (var i = 0; i < filas; i++) {
+    tr = document.createElement("tr");
+    for (var j = 0; j < columnas; j++) {
+      td = document.createElement("td");
+      if(data[i][j] == null) {
+        td.innerHTML = "0";
+      } else {
+        td.innerHTML = data[i][j];
+      }
+      tr.appendChild(td);
+    }
+    table.appendChild(tr);
+  }
+}
+
 
 function filterFecha(){
   var desde = document.getElementById("desde");
@@ -132,18 +152,12 @@ function filterFecha(){
     var h = hasta.value.split("-")[2]+"-"+hasta.value.split("-")[1]+"-"+hasta.value.split("-")[0];
     var cant;
     var t;
+    var filas;
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
-        table.innerHTML = "<tr>"+
-                          "<th>Fecha</th>"+
-                          "<th>Residuos no Tratados</th>"+
-                          "<th>Residuos Tratados</th>"+
-                          "<th>Plastico</th>"+
-                          "<th>Carton</th>"+
-                          "<th>Papel</th>"+
-                          "<th>Vidrio</th>"+
-                          "<th>Metal</th>"+
-                          "</tr>"+this.responseText;
+        filas = JSON.parse(this.responseText);
+        console.log(filas);
+        filasConstructor(filas);
         for(var i = 0; i < 7; i++){
           cant = document.querySelectorAll(".item"+i);
           t = 0;
@@ -169,18 +183,9 @@ function filterSector(){
     var t;
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
-        console.log(this.responseText);
-        table.innerHTML = "<tr>"+
-                          "<th>Nº Casa</th>"+
-                          "<th>Fecha</th>"+
-                          "<th>Residuos no Tratados</th>"+
-                          "<th>Residuos Tratados</th>"+
-                          "<th>Plastico</th>"+
-                          "<th>Carton</th>"+
-                          "<th>Papel</th>"+
-                          "<th>Vidrio</th>"+
-                          "<th>Metal</th>"+
-                          "</tr>"+this.responseText;
+        filas = JSON.parse(this.responseText);
+        console.log(filas);
+        filasConstructor(filas);
         for(var i = 0; i < 7; i++){
           cant = document.querySelectorAll(".item"+i);
           t = 0;
@@ -206,18 +211,9 @@ function filterCasa(){
     var t;
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
-        console.log(this.responseText);
-        table.innerHTML = "<tr>"+
-                          "<th>Fecha</th>"+
-                          "<th>Participacion</th>"+
-                          "<th>Residuos no Tratados</th>"+
-                          "<th>Residuos Tratados</th>"+
-                          "<th>Plastico</th>"+
-                          "<th>Carton</th>"+
-                          "<th>Papel</th>"+
-                          "<th>Vidrio</th>"+
-                          "<th>Metal</th>"+
-                          "</tr>"+this.responseText;
+        filas = JSON.parse(this.responseText);
+        console.log(filas);
+        filasConstructor(filas);
         for(var i = 0; i < 7; i++){
           cant = document.querySelectorAll(".item"+i);
           t = 0;
