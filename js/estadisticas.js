@@ -181,6 +181,7 @@ function filterSector(){
     var xhttp = new XMLHttpRequest();
     var cant;
     var t;
+    var filas;
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
         filas = JSON.parse(this.responseText);
@@ -209,6 +210,7 @@ function filterCasa(){
     var xhttp = new XMLHttpRequest();
     var cant;
     var t;
+    var filas;
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
         filas = JSON.parse(this.responseText);
