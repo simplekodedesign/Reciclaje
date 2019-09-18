@@ -86,7 +86,7 @@
       </div>
       <div class="principal" id="principalCont">
         <div class="skd">
-          <i><b><small>Sistema Hecho por <a href="https://simplekodedesign.com" target="_blank" style="color: blue;">SKD</a></small></b></i>
+          <i><b>Sistema Hecho por <a href="https://simplekodedesign.com" target="_blank" style="color: blue;">SKD</a></b></i>
         </div>
       </div>
     </div>
