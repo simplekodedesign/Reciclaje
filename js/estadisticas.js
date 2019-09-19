@@ -134,7 +134,7 @@ function filasConstructor (data) {
   if(data.participacion) {
     let participacion = data.participacion;
     let cantidades = [0, 0, 0];
-  } 
+  }
 
   for (var i = 0; i < filas; i++) {
     tr = document.createElement("tr");
@@ -145,7 +145,7 @@ function filasConstructor (data) {
       } else {
         td.innerHTML = data.resp[i][j];
       }
-      
+
       if(participacion == 1 && i == 1) {
         switch(td.innerHTML){
           case "Si":
@@ -161,7 +161,7 @@ function filasConstructor (data) {
       }
 
       tr.appendChild(td);
-      
+
       if(!(j < datanum)) {
         totales[j - datanum] += parseFloat(td.innerHTML);
       }
@@ -241,7 +241,7 @@ function participacion_fecha(){
   var h = hasta.value.split("-")[2]+"-"+hasta.value.split("-")[1]+"-"+hasta.value.split("-")[0];
   xhttp.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-      var data = this.responseText.split("_");
+      var data = JSON.parse(this.responseText);
       document.getElementById("csi").innerHTML = data[0];
       document.getElementById("cno").innerHTML = data[1];
       document.getElementById("cotro").innerHTML = data[2];
@@ -255,7 +255,7 @@ function participacion_sector(){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200){
-      var data = this.responseText.split("_");
+      var data = JSON.parse(this.responseText);
       document.getElementById("csi").innerHTML = data[0];
       document.getElementById("cno").innerHTML = data[1];
       document.getElementById("cotro").innerHTML = data[2];

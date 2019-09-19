@@ -3,11 +3,11 @@
 
   Connection::connect();
 
-  $resp = "";
+  class data{
+    public $resp = [];
+  }
 
-  $si = 0;
-  $no = 0;
-  $otro = 0;
+  $resp = [0,0,0];
 
   $fechaInicio=strtotime($_GET["d"]);
   $fechaFin=strtotime($_GET["h"]);
@@ -17,21 +17,19 @@
       while($result = $resultado->fetch(PDO::FETCH_ASSOC)){
         switch($result["participa"]){
           case "Si":
-            $si++;
+            $resp[0]++;
             break;
           case "No":
-            $no++;
+            $resp[1]++;
             break;
           case "Otro":
-            $otro++;
+            $resp[2]++;
             break;
         }
       }
     }
   }
 
-  $resp = $si."_".$no."_".$otro;
-
-  echo $resp;
+  echo json_encode($resp);
 
 ?>
