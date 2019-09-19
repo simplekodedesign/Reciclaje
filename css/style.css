@@ -44,6 +44,7 @@ body{
 h1, .user{
   font-family: 'Dancing Script';
   font-weight: 900;
+  color: var(--primary);
 }
 
 
@@ -54,7 +55,7 @@ header{
   left: 0;
   top: 0;
   position: sticky;
-  width: 7%;
+  width: 9%;
   color: var(--primary);
   display: flex;
   flex-direction: column;

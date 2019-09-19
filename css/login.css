@@ -1,25 +1,22 @@
 body{
-  min-width: 100vh;
-  min-height: 600px;
+  min-width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  /* background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205)); */
-  overflow: hidden;
   text-align: center;
 }
 
 h1{
-  color: rgb(60,151,120);
+  margin-top: 0;
   font-size: 4em;
-  font-family: "dancing script" !important;
-  font-weight: 400;
 }
 
 form{
-  padding: 0px 25px;
+  min-width: 320px;
+  /* width: 50%; */
 }
 
 form div{
@@ -27,10 +24,9 @@ form div{
 }
 
 .form-control{
-  background: rgb(73,127,106);
   display: flex;
+  justify-content: center;
   height: 3em;
-  padding-left: 60px;
   position: relative;
 }
 
@@ -52,26 +48,19 @@ form div{
 
 input[type = "text"],
 input[type = "password"]{
-  padding: 10px 50px;
-  color: rgb(60,151,120);
-  background: rgb(146,246,152);
-  border: 1px solid rgb(44,184,72);
-  font-size: 1.5em;
-  cursor: pointer;
+  padding: 10px;
+  color: black;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
   max-width: 200px;
 }
 
-.form-control div{
-  min-width: 60px;
-  display: flex;
-  align-items: center;
-}
 
 input[type = "submit"]{
-  background: rgb(31,80,71);
-  color: rgb(73,235,187);
+  background: var(--primary);
+  color: var(--secondary);
   padding: 10px 30px;
-  border: 1px solid rgb(44,184,72);
+  border: 0;
   font-size: 1.5em;
   cursor: pointer;
 }

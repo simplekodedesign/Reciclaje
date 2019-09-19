@@ -68,13 +68,13 @@
           <div class="ageTitle">
             <label>Edades del Grupo Familiar</label>
           </div>
-          <div class="age">
+          <div class="inputForm">
             <label for="age1">0-12</label><input type="number" id="age1" name="" value="" placeholder="0">
           </div>
-          <div class="age">
+          <div class="inputForm">
             <label for="age2">13-20</label><input type="number" id="age2" name="" value="" placeholder="0">
           </div>
-          <div class="age">
+          <div class="inputForm">
             <label for="age3">+20</label><input type="number" id="age3" name="" value="" placeholder="0">
           </div>
         </div>
