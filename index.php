@@ -18,9 +18,7 @@
       <div class="form-control pass-control">
         <input type="password" name="pass" value="">
       </div>
-      <div class="">
-        <input type="submit" name="" value="LOGIN">
-      </div>
+      <input type="submit" name="" value="Ingresar">
     </form>
   </body>
 </html>
