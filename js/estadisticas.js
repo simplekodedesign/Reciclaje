@@ -3,9 +3,9 @@ var contenedor = document.getElementById("contenedor");
 var table = document.getElementById("filterCont");
 var dataTotal = document.getElementsByClassName("dataTotal");
 
-var headerStatic = ["Residuos no Tratados", "Residuos Tratados", "Plástico", "Cartón", "Papel", "Vidrio", "Metal"];
+const headerStatic = ["Residuos no Tratados", "Residuos Tratados", "Plástico", "Cartón", "Papel", "Vidrio", "Metal"];
 
-var headerSelect = [
+const headerSelect = [
   ["Fecha"],
   ["N° Casa", "Fecha"],
   ["Fecha", "Participación"]
@@ -131,6 +131,10 @@ function filasConstructor (data) {
   let tr, td;
   let filas = data.resp.length;
   let columnas = data.resp[0].length;
+  if(data.participacion) {
+    let participacion = data.participacion;
+    let cantidades = [0, 0, 0];
+  } 
 
   for (var i = 0; i < filas; i++) {
     tr = document.createElement("tr");
@@ -141,13 +145,33 @@ function filasConstructor (data) {
       } else {
         td.innerHTML = data.resp[i][j];
       }
-      tr.appendChild(td);
+      
+      if(participacion == 1 && i == 1) {
+        switch(td.innerHTML){
+          case "Si":
+            cantidades[0]++;
+            break;
+          case "No":
+            cantidades[1]++;
+            break;
+          case "Otro":
+            cantidades[2]++;
+            break;
+        }
+      }
 
+      tr.appendChild(td);
+      
       if(!(j < datanum)) {
         totales[j - datanum] += parseFloat(td.innerHTML);
       }
     }
     table.appendChild(tr);
+  }
+  if(participacion) {
+    document.getElementById("csi").innerHTML = cantidades[0];
+    document.getElementById("cno").innerHTML = cantidades[1];
+    document.getElementById("cotro").innerHTML = cantidades[2];
   }
   for (var i = 0; i < totalesLength; i++) {
     dataTotal[i].innerHTML = totales[i];
@@ -199,31 +223,11 @@ function filterCasa(){
 
   if(casa.value!=""){
     var xhttp = new XMLHttpRequest();
-    var cant;
-    var t;
     var filas;
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
         filas = JSON.parse(this.responseText);
         filasConstructor(filas);
-        cant = document.querySelectorAll(".participa");
-        t = [0,0,0];
-        for(var i = 0; i < cant.length; i++){
-          switch(cant[i].innerHTML){
-            case "Si":
-              t[0]++;
-              break;
-            case "No":
-              t[1]++;
-              break;
-            case "Otro":
-              t[2]++;
-              break;
-          }
-        }
-        document.getElementById("csi").innerHTML = t[0];
-        document.getElementById("cno").innerHTML = t[1];
-        document.getElementById("cotro").innerHTML = t[2];
       }
     }
     xhttp.open("GET","../controller/est_casa.php?c="+casa.value,true);

@@ -5,7 +5,8 @@
 
   class Data {
     public $resp = [];
-    public $datanum = 2; //Será la longitud a obviar para acumular data.
+    public $datanum = 2;  // Será la longitud a obviar para acumular data.
+    public $participacion = 1;  // Exclusiva de este controlador, para contar la participación de las casas.
   }
 
   $data = new Data();
