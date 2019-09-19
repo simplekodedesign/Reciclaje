@@ -3,10 +3,6 @@
 
   Connection::connect();
 
-  class data{
-    public $resp = [];
-  }
-
   $resp = [0,0,0];
 
   $fechaInicio=strtotime($_GET["d"]);

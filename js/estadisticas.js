@@ -132,8 +132,8 @@ function filasConstructor (data) {
   let filas = data.resp.length;
   let columnas = data.resp[0].length;
   if(data.participacion) {
-    let participacion = data.participacion;
-    let cantidades = [0, 0, 0];
+    var participacion = data.participacion;
+    var cantidades = [0, 0, 0];
   }
 
   for (var i = 0; i < filas; i++) {
