@@ -3,7 +3,13 @@
 
   Connection::connect();
 
-  $resp = [];
+  class Data {
+    public $resp = [];
+    public $datanum = 1; //Será la longitud a obviar para acumular data.
+  }
+
+  $data = new Data();
+
   $fila = [];
   $fechaInicio=strtotime($_GET["d"]);
   $fechaFin=strtotime($_GET["h"]);
@@ -20,11 +26,11 @@
         $new = array_push($fila, $result["papel"]);
         $new = array_push($fila, $result["vidrio"]);
         $new = array_push($fila, $result["metal"]);
-        $new = array_push($resp, $fila);
+        $new = array_push($data->resp, $fila);
       }
     }
   }
 
-  echo json_encode($resp);
+  echo json_encode($data);
 
 ?>

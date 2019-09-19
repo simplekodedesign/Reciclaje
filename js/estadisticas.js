@@ -1,8 +1,9 @@
 var filter = document.getElementById("filter");
 var contenedor = document.getElementById("contenedor");
 var table = document.getElementById("filterCont");
+var dataTotal = document.getElementsByClassName("dataTotal");
 
-var headerStatic = ["Residuos no Tratados", "Residuos Tratados", "Plástico", "Cartón", "Papel", "Vidrio", "Metal"]
+var headerStatic = ["Residuos no Tratados", "Residuos Tratados", "Plástico", "Cartón", "Papel", "Vidrio", "Metal"];
 
 var headerSelect = [
   ["Fecha"],
@@ -31,6 +32,7 @@ window.addEventListener("load",function(){
 
 function tableConstructor (data) {
   while(contenedor.firstElementChild)contenedor.removeChild(contenedor.firstElementChild);
+  while(table.lastElementChild != table.firstElementChild)table.removeChild(table.lastChild);
   let div1, div2, label1, label2, input1, input2;
   let indexHS; // Index para headerSelect
   let tr = document.createElement("tr");
@@ -123,21 +125,32 @@ function tableConstructor (data) {
 
 function filasConstructor (data) {
   while(table.lastElementChild != table.firstElementChild)table.removeChild(table.lastChild);
+  let datanum = data.datanum;
+  let totales = [0, 0, 0, 0, 0, 0, 0];
+  let totalesLength = totales.length;
   let tr, td;
-  let filas = data.length;
-  let columnas = data[0].length;
+  let filas = data.resp.length;
+  let columnas = data.resp[0].length;
+
   for (var i = 0; i < filas; i++) {
     tr = document.createElement("tr");
     for (var j = 0; j < columnas; j++) {
       td = document.createElement("td");
-      if(data[i][j] == null) {
+      if(data.resp[i][j] == null) {
         td.innerHTML = "0";
       } else {
-        td.innerHTML = data[i][j];
+        td.innerHTML = data.resp[i][j];
       }
       tr.appendChild(td);
+
+      if(!(j < datanum)) {
+        totales[j - datanum] += parseFloat(td.innerHTML);
+      }
     }
     table.appendChild(tr);
+  }
+  for (var i = 0; i < totalesLength; i++) {
+    dataTotal[i].innerHTML = totales[i];
   }
 }
 
@@ -150,22 +163,11 @@ function filterFecha(){
     var xhttp = new XMLHttpRequest();
     var d = desde.value.split("-")[2]+"-"+desde.value.split("-")[1]+"-"+desde.value.split("-")[0];
     var h = hasta.value.split("-")[2]+"-"+hasta.value.split("-")[1]+"-"+hasta.value.split("-")[0];
-    var cant;
-    var t;
     var filas;
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
         filas = JSON.parse(this.responseText);
-        console.log(filas);
         filasConstructor(filas);
-        for(var i = 0; i < 7; i++){
-          cant = document.querySelectorAll(".item"+i);
-          t = 0;
-          for(var j = 0; j < cant.length; j++){
-            t += parseFloat(cant[j].innerHTML);
-          }
-          document.getElementById("dat"+i).innerHTML = t;
-        }
       }
       participacion_fecha();
     }
@@ -179,22 +181,11 @@ function filterSector(){
 
   if(sector.value!=""){
     var xhttp = new XMLHttpRequest();
-    var cant;
-    var t;
     var filas;
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
         filas = JSON.parse(this.responseText);
-        console.log(filas);
         filasConstructor(filas);
-        for(var i = 0; i < 7; i++){
-          cant = document.querySelectorAll(".item"+i);
-          t = 0;
-          for(var j = 0; j < cant.length; j++){
-            t += parseFloat(cant[j].innerHTML);
-          }
-          document.getElementById("dat"+i).innerHTML = t;
-        }
         participacion_sector();
       }
     }
@@ -214,16 +205,7 @@ function filterCasa(){
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
         filas = JSON.parse(this.responseText);
-        console.log(filas);
         filasConstructor(filas);
-        for(var i = 0; i < 7; i++){
-          cant = document.querySelectorAll(".item"+i);
-          t = 0;
-          for(var j = 0; j < cant.length; j++){
-            t += parseFloat(cant[j].innerHTML);
-          }
-          document.getElementById("dat"+i).innerHTML = t;
-        }
         cant = document.querySelectorAll(".participa");
         t = [0,0,0];
         for(var i = 0; i < cant.length; i++){
