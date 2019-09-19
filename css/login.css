@@ -1,12 +1,12 @@
 body{
-  min-width: 100%;
+  min-width: 100vh;
   min-height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205));
+  /* background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205)); */
   overflow: hidden;
   text-align: center;
 }
@@ -14,6 +14,8 @@ body{
 h1{
   color: rgb(60,151,120);
   font-size: 4em;
+  font-family: "dancing script" !important;
+  font-weight: 400;
 }
 
 form{

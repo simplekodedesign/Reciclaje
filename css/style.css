@@ -4,29 +4,61 @@
   font-weight: normal;
   src: local(roboto), url('../font/Roboto-Regular.ttf') format('ttf');
 }
+/* dancing-script-700 - latin */
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/dancing-script-v11-latin-700.eot'); /* IE9 Compat Modes */
+  src: local('Dancing Script Bold'), local('DancingScript-Bold'),
+       url('../fonts/dancing-script-v11-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/dancing-script-v11-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/dancing-script-v11-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/dancing-script-v11-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/dancing-script-v11-latin-700.svg#DancingScript') format('svg'); /* Legacy iOS */
+}
+
+:root{
+  --primary: #008F39; /*Green*/
+  --secondary: #f0f0f0;
+}
 
 *{
   box-sizing: border-box;
 }
 
-@import url('../font/Roboto-Regular.ttf');
-
-body{
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-  min-height: 100vh;
-  user-select: none;
-  display: flex;
-  flex-wrap: nowrap;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.menu{
+body{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+  min-height: 100vh;
+  user-select: none;
+}
+
+h1, .user{
+  font-family: 'Dancing Script';
+  font-weight: 900;
+}
+
+
+/*---------------------------------HEADER--------------------------------*/
+
+header{
+  background-color: var(--secondary);
   left: 0;
   top: 0;
   position: sticky;
-  width: 20%;
-  background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205));
+  width: 7%;
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
 }
 
@@ -36,99 +68,129 @@ body{
 }
 
 .user img{
-  width: 40%;
-  margin: 15px 0px 0px 0px;
-  color: white;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.user p{
+  font-weight: bold;
+  font-size: 2em;
+  margin: 0;
 }
 
 .menubtn{
   display: none;
 }
 
-.username{
-  font-weight: bold;
-  font-size: 2em;
-}
-
 .options{
-  margin: 9px 0px;
-  position: relative;
   transition: all 500ms;
   width: 100%;
 }
 
-.options a{
-  text-decoration: none;
+.option{
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  list-style: none;
+  text-align: center;
+  min-height: 65px;
+  position: relative;
+  transition: all 500ms;
 }
 
-.option{
-  list-style: none;
-  padding: 15px;
-  display: block;
-  color: #1f495f;
-  font-size: 1.5em;
-  text-align: left;
-  border-top: 2px solid #1f495f;
-  transition: all 500ms;
-  background: inherit;
-  cursor: pointer;
-  text-decoration: none;
-  position: relative;
+.option:before{
+  content: "";
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+}
+
+#showMenuReg:before{
+  background-image: url('../img/add.svg');
+}
+
+#showMenuEst:before{
+  background-image: url('../img/stats.svg')
+}
+
+#btnSalir:before{
+  background-image: url('../img/exit.svg');
 }
 
 .option:hover{
-  background: rgb(35,228,205);
+  background: var(--primary);
+  color: var(--secondary);
 }
 
-.optionReg a,
-.optionEst a{
-  font-size: inherit;
-}
-
-.option:hover > .optionReg
-.option:hover > .optionEst{
+.option:hover > .optionL{
   display: block;
 }
 
-.optionReg,
-.optionEst{
+.optionL{
+  background-color: var(--secondary);
+  color: var(--primary);
   display: none;
   transition: all 500ms;
-  background: linear-gradient(to bottom,rgb(200,254,125),rgb(35,228,205));
   position: absolute;
   right: -100%;
-  top: -2px;
+  top: 0;
   width: 100%;
   min-height: 100%;
 }
 
-.optionReg .option:hover{
-  background: rgb(35,228,205);
+.optionL .option:hover{
+  background-color: var(--primary);
+  color: var(--secondary);
 }
 
+.optionL .option:nth-child(1)::before{
+  background-image: url('../img/ios-home.svg');
+}
+
+.optionL .option:nth-child(2)::before{
+  background-image: url('../img/calendar.svg');
+}
+
+.optionL .option:nth-child(3)::before{
+  background-image: url('../img/add.svg');
+}
+
+.showMenu{
+  transform: scale(1);
+}
+
+/*---------------------------------SECTION--------------------------------*/
+
 .principal{
-  width: 80%;
+  background-color: white;
+  width: 93%;
   margin: 0;
-  padding: 0;
+  padding: 10px 40px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+footer{
+  align-self: center;
+  margin-bottom: 100px;
+}
+
+footer a{
+  color: var(--primary);
 }
 
 @media(max-width: 500px){
-  #main{
-    width: 100%;
-    overflow: scroll;
-  }
 
-  #main::-webkit-scrollbar{
-    width: 0px;
-  }
-
-  .menu{
+  header{
     width: 100%;
-    background: rgb(31,80,71);
-    height: 50px !important;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
+    height: 7%;
+    flex-direction: row;
+    left: auto;
   }
 
   .user{
@@ -138,10 +200,6 @@ body{
   }
 
   .username{
-    font-weight: bold;
-    font-size: 1em;
-    color: white;
-    align-self: center;
     margin-left: 8px;
     margin: 5px 0px 0px 10px;
   }
@@ -150,10 +208,6 @@ body{
     width: 32px;
     margin: 5px 0px 0px 10px;
     align-self: center;
-  }
-
-  .principal{
-    width: 100%;
   }
 
   .menubtn{
@@ -173,28 +227,21 @@ body{
   }
 
   .options{
-    transform: translateY(-200%);
+    transform-origin: top;
+    transform: scaleY(0);
     transition: all 500ms;
-    background: #1f495f;
     margin: 9px 0px;
     width: 100%;
     position: absolute;
   }
 
   .option{
-    list-style: none;
     padding: 15px;
-    color: #fff;
-    font-size: 1.3em;
-    text-align: left;
-    border-top: 2px solid #fff;
-    z-index: 0;
     transition: all 500ms;
-    background: rgb(31,80,71);
-    text-decoration: none;
+    z-index: 0;
   }
 
-  .option:hover{
-    background: #37bfbf;
+  .showMenu{
+    transform: scaleY(1);
   }
 }
