@@ -81,6 +81,11 @@
         </div>
 
         <div class="inputForm">
+          <label for="direccion">Metal (Kg)</label>
+          <input type="text" name="" class="item" id="item6" value="">
+        </div>
+
+        <div class="inputForm">
           <button type="button" id="btnSave" name="button">Guardar</button>
         </div>
       </div>

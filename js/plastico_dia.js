@@ -16,7 +16,8 @@ window.addEventListener("load",function(){
                    "&plastic="+items[2].value+
                    "&carton="+items[3].value+
                    "&paper="+items[4].value+
-                   "&glass="+items[5].value;
+                   "&glass="+items[5].value+
+                   "&metal="+items[6].value;
       xhttp.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
           if(this.responseText=="listo"){
@@ -39,7 +40,7 @@ window.addEventListener("load",function(){
       xhttp.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
           if(this.responseText!=""){
-            var data = this.responseText.split("/");
+            var data = JSON.parse(this.responseText);
             for(var i=0;i<items.length;i++){
               items[i].value = data[i];
             }

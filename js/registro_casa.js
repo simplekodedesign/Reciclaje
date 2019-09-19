@@ -54,7 +54,7 @@ window.addEventListener("load",function(){
       xhttp.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
           if(this.responseText!="no"&&this.responseText!=""){
-              var data = this.responseText.split("/");
+              var data = JSON.parse(this.responseText);
               t_ident.value = data[0];
               n_ident.value = data[1];
               representante.value = data[2];

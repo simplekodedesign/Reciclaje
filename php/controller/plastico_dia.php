@@ -18,12 +18,13 @@
                           plastico='".$_POST["plastic"]."',
                           carton='".$_POST["carton"]."',
                           papel=".$_POST["paper"].",
-                          vidrio=".$_POST["glass"]."
+                          vidrio=".$_POST["glass"].",
+                          metal=".$_POST["metal"]."
                           where id=".$id);
     $resp = "listo";
   }else{
-    Connection::request("insert into plastico_dia (fecha,residuos_no_tratados,residuos_tratados,plastico,carton,papel,vidrio) values
-    ('".$_POST["fecha"]."',".$_POST["rsn"].",".$_POST["rst"].",".$_POST["plastic"].",".$_POST["carton"].",".$_POST["paper"].",".$_POST["glass"].")");
+    Connection::request("insert into plastico_dia (fecha,residuos_no_tratados,residuos_tratados,plastico,carton,papel,vidrio,metal) values
+    ('".$_POST["fecha"]."',".$_POST["rsn"].",".$_POST["rst"].",".$_POST["plastic"].",".$_POST["carton"].",".$_POST["paper"].",".$_POST["glass"].",".$_POST["metal"].")");
     $resp = "listo";
   }
 
