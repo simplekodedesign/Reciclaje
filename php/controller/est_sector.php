@@ -3,7 +3,13 @@
 
   Connection::connect();
 
-  $resp = [];
+  class Data {
+    public $resp = [];
+    public $datanum = 2; //Será la longitud a obviar para acumular data.
+  }
+
+  $data = new Data();
+
   $fila = [];
 
   $resultado = Connection::request("select id,n_casa from casas where direccion like '%".$_GET["s"]."%'");
@@ -23,13 +29,13 @@
             $new = array_push($fila, $result2["papel"]);
             $new = array_push($fila, $result2["vidrio"]);
             $new = array_push($fila, $result2["metal"]);
-            $new = array_push($resp, $fila);
+            $new = array_push($data->resp, $fila);
           }
         }
       }
     }
   }
 
-  echo json_encode($resp);
+  echo json_encode($data);
 
 ?>

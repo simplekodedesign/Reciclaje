@@ -81,13 +81,13 @@
 
         <div class="totales">
           <div class="">
-            <p><b>Residuos no tratados: </b><span id="dat0">0</span></p>
-            <p><b>Residuos tratados: </b><span id="dat1">0</span></p>
-            <p><b>Plastico: </b><span id="dat2">0</span></p>
-            <p><b>Carton: </b><span id="dat3">0</span></p>
-            <p><b>Papel: </b><span id="dat4">0</span></p>
-            <p><b>Vidrio: </b><span id="dat5">0</span></p>
-            <p><b>Metal: </b><span id="dat6">0</span></p>
+            <p><b>Residuos no tratados: </b><span class="dataTotal" id="dat0">0</span></p>
+            <p><b>Residuos tratados: </b><span class="dataTotal" id="dat1">0</span></p>
+            <p><b>Plastico: </b><span class="dataTotal" id="dat2">0</span></p>
+            <p><b>Carton: </b><span class="dataTotal" id="dat3">0</span></p>
+            <p><b>Papel: </b><span class="dataTotal" id="dat4">0</span></p>
+            <p><b>Vidrio: </b><span class="dataTotal" id="dat5">0</span></p>
+            <p><b>Metal: </b><span class="dataTotal" id="dat6">0</span></p>
           </div>
           <div class="">
               <p><b>Cantidad de participantes: </b><span id="csi">0</span></p>
